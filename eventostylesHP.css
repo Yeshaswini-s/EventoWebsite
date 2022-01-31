@@ -1,0 +1,76 @@
+body{
+    background-color: #1B1B2F; 
+    color: #D4ECDD;
+}
+
+body p{
+    font-size: 20px;
+}
+
+.menu-ul{
+    width: 100%; 
+    display: flex; 
+    place-content: space-around; 
+    align-items: center; 
+    height: 6em; 
+    margin: 0px; 
+    padding: 0px;;
+}
+nav{
+    background-color: #E43F5A; 
+    padding-top: 10px;
+}
+nav a {
+    text-decoration: none;
+}
+nav li{
+    display: inline-block; 
+    width: 23%; 
+    font-size: 25px; 
+    text-align: center; 
+    padding: 10px;
+}
+section.join{
+    background-color: #3FE4C9; 
+    color: #1F4068; 
+    text-align: center; 
+    padding: 50px 20px;
+}
+.images{
+    align-items: center; 
+    display: flex; 
+    place-content: center;
+}
+.images li{
+    display: inline-block; 
+    width: 20%; 
+    margin-left: 25px; 
+    align-items: center; 
+}
+.images li:hover{
+    position: relative; 
+    top: -40px;
+}
+footer{
+    background-color: #E43F5A; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    bottom: 0; 
+    width: 100%;
+}
+article section p{
+    font-size: 20px;
+}
+map area {
+    display: inline-block;
+}
+section div.contact-main{
+    font-size: 25px; 
+    width: 30%; 
+    padding: 10px; 
+    float: left;
+}
+.imagecenter{
+    display: flex;
+    place-content: center;
+}

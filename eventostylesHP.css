@@ -8,6 +8,18 @@ body p{
     font-size: 20px;
 }
 
+dl, ol{
+    font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    align-content: center;
+    padding-left: 5.5em;
+}
+
+ol li{
+    margin-left: 5em;
+    padding-left: 0.5em;
+}
+
 .bgimage{
     /* background-image: url(concert1.jpg); */
     background-image: url(venueimgfinnn.png); 
@@ -33,6 +45,7 @@ body p{
     font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
 .menu-ul{
     width: 100%; 
     float: right;
@@ -52,7 +65,7 @@ nav{
 nav ul li:first-child{
     float: left;
     padding-left: 5px;
-    margin-left: 2em;
+    margin-left: 5em;
     margin-top: 0px;
 }
 nav a {

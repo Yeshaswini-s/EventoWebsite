@@ -25,24 +25,114 @@ ol li{
     background-image: url(venueimgfinnn.png); 
     background-color: black;
     width: 98vw; 
-    height: 80vh; 
+    height: 90vh; 
     background-size: cover;
 }
+
+.bg-catering{
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(97, 97, 93, 0.2),rgba(0,0,0,0.8)),url(winedrinks.jpg);
+    background-repeat: no-repeat !important;
+    background-position: center right, top left !important;
+    width: 98vw; 
+    height: 80vh; 
+}
+
+.bg-venue{
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(65, 65, 62, 0.2),rgba(0,0,0,0.8)),url(venuebgsection.png);
+    background-repeat: no-repeat !important;
+    background-position: center right, top left !important;
+    width: 98vw; 
+    height: 80vh; 
+}
+
 
 .center-end{
     display: flex;
     align-items: center;
-    place-content: flex-end;
+    place-content: flex-start;
 
 }
 
 .textonbgimage{
-    margin-right: 2em;
+    /* margin-left: 2em; */
+    margin-left: 1em;
+    padding-left: 15px;
     display: flex;
     top: 80%; 
-    right:10%; 
-    font-size: 4rem;
+    left:10%; 
+    font-size: 8rem;
     font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.textonbg-catering{
+    margin-left: 5em;
+    text-align: left;
+    top: 80%; 
+}
+.textonbg-catering h2{
+    font-size: 3.5em;
+}
+.textonbg-catering p{
+    width: 40vw;
+    font-size: 2em;
+}
+
+.textonbg-venue{
+    margin-left: 5em;
+    text-align: left;
+    top: 80%; 
+}
+.textonbg-venue h2{
+    font-size: 3.5em;
+}
+.textonbg-venue p{
+    width: 40vw;
+    font-size: 2em;
+}
+
+.lightball-section{
+    /* margin-left: 5em; */
+    padding-bottom: 6em;
+    display: flex;
+    align-items: center;
+    place-content: space-evenly;
+    width: 100%;
+    text-align: justify;
+}
+
+.gif-run{
+    width: 35%;
+}
+
+.lightball-text{
+    padding-top: 3em;
+    width: 35%;
+    height: 80%;
+}
+
+.artist-section{
+    /* margin-left: 5em; */
+    padding-top: 6em;
+    padding-bottom: 6em;
+    display: flex;
+    align-items: center;
+    place-content: space-evenly;
+    width: 100%;
+    text-align: justify;
+}
+
+.gif-artist-run{
+    width: 35%;
+}
+
+.artists-text{
+    padding-top: 3em;
+    width: 35%;
+    height: 80%;
 }
 
 
@@ -119,6 +209,7 @@ section.join{
 }
 footer{
     background-color: #FFBD59; 
+    color: black;
     padding-top: 5px; 
     padding-bottom: 5px; 
     bottom: 0; 

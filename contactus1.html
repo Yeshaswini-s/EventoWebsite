@@ -6,23 +6,11 @@
         <link rel="icon" type="image/x-icon" href="evento.ico">
 
         <link rel="stylesheet" href="eventostylesHP.css">
+        <link rel="stylesheet" href="eventocontactP.css">
+        <!-- for social media icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
-    <style>
-        
-
-        section div.contact-main{
-            font-size: 25px; width: 30%; padding: 10px; float: left;
-        }
-
-        h2{
-            color: #FFBD59;
-        }
-        
-        
-
-
-
-    </style>
+    
 
     <body>
 
@@ -32,7 +20,7 @@
 
         <nav style="display: flex;">
             <ul class="menu-ul">
-                <li><img src="logo.png" alt="picture of the logo" width="90" height="90" /></li>
+                <li><img src="logo.png" alt="picture of the logo" width="90" height="90" onclick="window.location.href='homepage1.html'" /></li>
     
     
                 <li><a href="contactus1.html" style="color: white;">Contact</a></li>
@@ -41,18 +29,22 @@
                 <li><a href="homepage1.html" style="color: white;">Home</a></li>
             </ul>
         </nav>
-        <hr>
-        <br>
+    
 
+        <div class="bgimage center-end">
+            <div class="bg-contactus">
+                <div class="textonbg-contactus">
+                    <img src="conrtactusbgimg.png" alt="picture of a illustration" width="400" height="400" class="imgdeco"/>
+                    <center>
+                        <h1>Contact Us</h1>
+                    </center>
+                </div>
+            </div>
+        </div>
 
+        
 
-        <center>
-            <h1>Contact Us</h1>
-        </center>
-
-        <br><br><br><hr>
-
-        <section style="display: flex;">
+        <section style="display: flex; padding-left: 5em;">
 
             <div class="contact-main">
                 <h2>EVENTO's CUSTOMER CARE NUMBER</h2>
@@ -68,12 +60,13 @@
 
             <div class="contact-main">
                 <h2>EVENTO's CONTACT ADDRESS</h2>
-                <p>
-                    EVENTO India,
-                    Tower-D, Plot No. 5,
-                    5th Floor, Logix Techno Park,
-                    Sector-25, Bengaluru-560082.
-                </p>
+                <pre style="font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 20px;">
+EVENTO India,
+Tower-D, Plot No. 5,
+5th Floor, Logix Techno Park,
+Sector-25, Bengaluru-560082.
+                </pre>
             </div>
 
         </section>
@@ -81,7 +74,7 @@
         <br><br><br>
 
 
-        <div class="feedbacklink">
+        <!-- <div class="feedbacklink">
             <hr>
             <h3>
                 FEEDBACK FORM
@@ -89,10 +82,103 @@
             <a href="feedback1.html" style="color: #FFD717;">Click here...</a>
             <hr>
 
+        </div> -->
+
+        
+        <div class="form-container">
+            <div class="form-border">
+                <form id="form" class="form">
+                    <!-- <label for="text">Name:</label><input type="text"  name="name of person" > 
+                    <br>
+                    <label for="email">Email ID:</label><input type="email" name="email of person">
+                    <br>
+                    <label for="tel">Phone number:</label><input type="tel" name="phnum of person">
+                    <br>
+                    <label for="option">About:</label> -->
+
+                    <div class="form-element">
+                        <input type="text"  name="name of person" placeholder="Name"  id="username"> 
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <br>
+                        <small>Error message</small>
+                    </div>
+
+                    <br>
+
+                    <div class="form-element" >
+                        <input type="email" name="email of person" placeholder="example@gmail.com" id="email">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <br>
+                        <small>Error message</small>
+
+                    </div>
+                    <br>
+
+                    <div class="form-element">
+                        <input type="tel" name="phnum of person" placeholder="999999999" id="phonenum">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <br>
+                        <small>Error message</small>
+
+                    </div>
+                    <br>
+                    
+
+                    <!-- Name: &emsp;&emsp;&emsp;&emsp; <input type="text"  name="name of person" >    <br><br>
+                    Email ID: &emsp;&emsp;&emsp;<input type="email" name="email of person"> <br><br>
+                    Phone number:&emsp;<input type="tel" name="phnum of person"> <br><br>
+                    &ensp;About:    &emsp;&emsp;&ensp;&ensp; -->
+
+                    <label for="option">About:</label>
+                    <select width = 100px>
+                    <option> Venue </option>
+                    <option> Pricing and Management </option>
+                    <option> Catering </option>
+                    <option> Services </option>
+                    </select>
+        
+                    <br><br>
+        
+                    <h3 style="font-weight: normal;">Feedback/Suggestion:</h3>
+        
+                    <textarea rows="5" cols="30" name="feedback"></textarea>
+        
+                    <br><br>
+        
+                    <button type="submit">Submit</button>
+                    <button type="reset" onClick="window.location.reload(true)">Reset</button>
+        
+                </form>
+
+            </div>
+
         </div>
+            
+        
+
+        <script src="feedbacF_validation.js"></script>
 
         <footer>
-            <p class="copyright"><center>Copyright 2022 EVENTO</center></p>
+
+            <div class="share">
+                <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                <a href="https://in.linkedin.com/" class="fab fa-linkedin"></a>
+                <a href="https://in.pinterest.com/" class="fab fa-pinterest"></a>
+            </div>
+            <div class="copyright">
+                <p>
+                    <center>Copyright 2022 EVENTO</center>
+                </p>
+                <p>
+                    <center>All rights reserved.</center>
+                </p>
+            </div>
+                
         </footer>
 
 

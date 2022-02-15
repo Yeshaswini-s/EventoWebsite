@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
 
 <head>
     <title>Home | EVENTO</title>
     <link rel="icon" type="image/x-icon" href="evento.ico">
 
     <link rel="stylesheet" href="eventostylesHP.css">
+    <!-- for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 
@@ -19,7 +21,7 @@
 
     <nav style="display: flex;">
         <ul class="menu-ul">
-            <li><img src="logo.png" alt="picture of the logo" width="90" height="90" /></li>
+            <li><img src="logo.png" alt="picture of the logo" width="90" height="90" onclick="window.location.href='homepage1.html'" /></li>
 
 
             <li><a href="contactus1.html" style="color: white;">Contact</a></li>
@@ -31,7 +33,7 @@
 
 
     <div class="bgimage center-end">
-        <div class="textonbgimage">EVENTO events studio
+        <div class="textonbgimage">EVENTO
         </div>
     </div>
 
@@ -65,7 +67,7 @@
     <div class="artist-section">
         <div class="gif-artist-run"><img src="artists-hp.gif" alt="gif of artists" width="400px" height="400px"></div>
         <div class="artists-text">
-            <br><br><br>
+            <br>
             <hr>
             <h2>Artist</h2>
             <p>We have a wide range of venues you can select from to host your parties be it a birthday party or a wedding. We have something set for every customer!! We give you the best service possible when it comes to food, taking your photos at your wedding or entertaining your guests!!</p>
@@ -94,12 +96,46 @@
     <br><br>
 
 
-    <ul class="images">
+    <!-- <ul class="images">
         <li><img src="seminarimg1.jpeg" alt="picture of a concert" width="250" height="350" class="imgdeco" /></li>
         <li><img src="food1.jpg" alt="picture of foods" width="250" height="350" class="imgdeco" /></li>
         <li><img src="buffet2.jpg" alt="picture of a buffet" width="250" height="350" class="imgdeco" /></li>
         <li><img src="ven3.jpg" alt="picture of a venue" width="250" height="350" class="imgdeco" /></li>
-    </ul>
+    </ul> -->
+
+    <section class="menu" > 
+        <div class="service-menu">
+            <div class="box">
+                <img src="ven3.jpg" alt="" width="250" height="350">
+                <h3>Venue Booking</h3>
+                <!-- <div class="price">$15.99 <span>20.99</span></div> -->
+                <a href="#" class="btn">View</a>
+            </div>
+    
+            <div class="box">
+                <img src="buffet2.jpg" alt="" width="250" height="350">
+                <h3>Catering Booking</h3>
+                <!-- <div class="price">$15.99 <span>20.99</span></div> -->
+                <a href="#" class="btn">View</a>
+            </div>
+    
+            <div class="box">
+                <img src="singerperf2.jpg" alt="" width="250" height="350">
+                <h3>Artist Booking</h3>
+                <!-- <div class="price">$15.99 <span>20.99</span></div> -->
+                <a href="#" class="btn">View</a>
+            </div>
+    
+            <div class="box">
+                <img src="venueimgfinnn.png" alt="" width="250" height="350">
+                <h3>Ticket Booking</h3>
+                <!-- <div class="price">$15.99 <span>20.99</span></div> -->
+                <a href="#" class="btn">View</a>
+            </div>
+        </div>
+    </section>
+
+    
 
 
 
@@ -132,12 +168,25 @@
     <!-- </article> -->
 
     <footer>
-        <p class="copyright">
-            <center>Copyright 2022 EVENTO</center>
-        </p>
-        <p class="copyright">
-            <center>All rights reserved.</center>
-        </p>
+
+        <center>
+            <div class="share">
+                <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                <a href="https://in.linkedin.com/" class="fab fa-linkedin"></a>
+                <a href="https://in.pinterest.com/" class="fab fa-pinterest"></a>
+            </div>  
+        </center>
+        <div class="copyright">
+            <p>
+                <center>Copyright 2022 EVENTO</center>
+            </p>
+            <p>
+                <center>All rights reserved.</center>
+            </p>
+        </div>
+            
     </footer>
 
 

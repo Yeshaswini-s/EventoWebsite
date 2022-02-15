@@ -3,6 +3,10 @@ body{
     color: white;
 }
 
+h1, h2, h3, h4{
+    font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 body p{
     font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
@@ -49,6 +53,22 @@ ol li{
     height: 80vh; 
 }
 
+.bg-contactus{
+    display: flex;
+    align-items: center;
+    place-content: center;
+    width: 78vw; 
+    height: 80vh; 
+    padding-left: 10em;
+}
+.bg-aboutus{
+    display: flex;
+    align-items: center;
+    place-content: center;
+    width: 78vw; 
+    height: 80vh; 
+    padding-left: 10em;
+}
 
 .center-end{
     display: flex;
@@ -158,6 +178,7 @@ nav ul li:first-child{
     padding-left: 5px;
     margin-left: 5em;
     margin-top: 0px;
+    cursor: pointer;
 }
 nav a {
     text-decoration: none;
@@ -177,8 +198,6 @@ nav li{
 }
 nav li a:hover{
     border-bottom: 3px solid #FFBD59;
-    /* position: relative;
-    width: 23%;  */
 
 }
 section.join{
@@ -208,14 +227,110 @@ section.join{
     position: relative;
     top: -40px;
 }
+
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    font-size: 1.7rem;
+    color: white;
+    background: #FFBD59;
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+}
+
+
+
+.menu .service-menu{
+    width: max-content;
+    display: flex;
+    width: fit-content;
+
+}
+
+.menu .service-menu .box{
+    padding: 3.8rem;
+    text-align: center;
+    
+}
+
+.menu .service-menu .box a{
+    text-decoration: none;
+}
+
+.menu .service-menu .box img{
+    height: 10rem;
+}
+
+.menu .service-menu .box h3{
+    color: white;
+    font-size: 1.8rem;
+    padding:1rem 0;
+}
+
+
+.menu .service-menu .box:hover{
+    background:#ffbd59a8;
+    border-radius: 6%;
+}
+
+.menu .service-menu .box:hover > *{
+    color: black;
+}
+
+
 footer{
-    background-color: #FFBD59; 
+    background-color: black;
     color: black;
     padding-top: 5px; 
     padding-bottom: 5px; 
     bottom: 0; 
     width: 100%;
 }
+
+footer .share{
+    padding:1rem 0;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    
+    
+}
+
+footer .share a{
+    height: 5rem;
+    width: 5rem;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    margin:.3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    place-content: center;
+}
+
+footer .share a:hover{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    transition-duration: 0.7s;
+    box-shadow: 0 12px 16px 0 #FFBD59, 0 17px 50px 0 #FFBD59;
+}
+
+footer .copyright{
+    background-color: #FFBD59;
+    padding:  0.2em;
+    font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em; 
+}
+
 article section p{
     font-size: 20px;
 }

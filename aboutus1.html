@@ -4,6 +4,7 @@
     <head>
         <title>About | EVENTO</title>
         <link rel="stylesheet" href="eventostylesHP.css">
+        <link rel="stylesheet" href="eventocontactP.css">
         <!-- for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -60,6 +61,13 @@
             <li>Catering</li>
             <li>Entertainment Booking</li>
         </ol>
+    
+        <br><br><br><hr><br>
+        <h2><center>Team Members</center></h2>
+        
+        <p><center><button id="button4" onclick="frontclickevent()"> Next </button>
+        <h3 id="list" style="text-align:center"></h3></center></p>
+        <p><center><button id="button5" onclick="backclickevent2()"> Prev </button></center></p>
 
         <br><br><br><hr>
 
@@ -82,6 +90,116 @@
             </div>
                 
         </footer>
+
+        <script language="javascript" type="text/javascript">
+
+            var d = new Date();
+            const d2 = new Date("December 19, 2002");
+            var day = d.toDateString();
+            const day2 = d2.toDateString();
+            // document.getElementById("date").innerHTML = day;
+            let counterfront = 1;
+            const teamMember1 = ["<1>", "Milan Michael", "4 BCA B", "Phnum: 90722-49222", "Christ University", "Bengaluru-560029", day];
+            let n1 = teamMember1.length;
+            const teamMember2 = ["<2>", "Vaibhav Gupta", "4 BCA B", "Phnum: 72970-10922", "Christ University", "Bengaluru-560029", day2];
+            let n2 = teamMember2.length;
+            const teamMember3 = ["<3>", "Yeshaswini S", "4 BCA B", "Phnum: 86600-75922", "Christ University", "Bengaluru-560029", day];
+            let n3 = teamMember3.length;
+            
+            //displayin the first dets
+            var text = "";
+            for (let i = 0; i < n1; i++) {
+                text += teamMember1[i] + "<br>";
+            }
+            document.getElementById("list").innerHTML = text;
+
+            
+             //for front button
+            function frontclickevent() {
+                if(counterfront == 2)
+                {
+                    frontclickevent3();
+                    counterfront = 3;
+                }
+                else if(counterfront == 3)
+                {
+                    frontclickevent2();
+                    counterfront = 1;
+                }
+                else
+                {
+                    var text = "";
+                    for (let i = 0; i < n2; i++) {
+                        text += teamMember2[i] + "<br>";
+                    }
+                    document.getElementById("list").innerHTML = text;
+                    counterfront = 2;
+                }
+                
+
+            }
+            function frontclickevent2() {
+                    var text = "";
+                    for (let i = 0; i < n1; i++) {
+                        text += teamMember1[i] + "<br>";
+                    }
+                    document.getElementById("list").innerHTML = text;  
+                    counterfront = 1;  
+            }
+
+            function frontclickevent3() {
+                var text = "";
+                for (let i = 0; i < n3; i++) {
+                    text += teamMember3[i] + "<br>";
+                }
+                document.getElementById("list").innerHTML = text;
+            }
+    
+
+
+
+            //for back button
+
+            function backclickevent() {
+                var text = "";
+                for (let i = 0; i < n2; i++) {
+                    text += teamMember2[i] + "<br>";
+                }
+                document.getElementById("list").innerHTML = text;
+                counterfront = 2;
+            }
+
+            function backclickevent2() {
+                if(counterfront == 3)
+                {
+                    backclickevent();
+                    counterfront = 2;
+                }
+                else if(counterfront == 1)
+                {
+                    backclickevent3();
+                    counterfront = 3;
+                }
+                else
+                {
+                    var text = "";
+                    for (let i = 0; i < n1; i++) {
+                        text += teamMember1[i] + "<br>";
+                    }
+                    document.getElementById("list").innerHTML = text;  
+                    counterfront = 1;  
+                }
+            }
+
+            function backclickevent3() {
+                var text = "";
+                for (let i = 0; i < n3; i++) {
+                    text += teamMember3[i] + "<br>";
+                }
+                document.getElementById("list").innerHTML = text;
+            }
+
+        </script>
 
     </body>
 

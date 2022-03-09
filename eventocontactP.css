@@ -32,8 +32,9 @@ select {
 }
 
 form input{
+    width: 275px;
     padding: 0.7em;
-    padding-right: 11em;
+    padding-right: 2em;
     margin-top: 2em;
     border-radius: 0.8em;
     font-family: inherit;
@@ -41,7 +42,8 @@ form input{
 }
 form select{
     padding: 1em;
-    padding-right: 11em;
+    width: 245px;
+    padding-right: 2em;
     margin-bottom: 2em;
     border-radius: 0.8em;
     font-family: inherit;
@@ -61,6 +63,11 @@ button{
     border-radius: 5px;
     font-family: inherit;
     cursor: pointer;
+}
+
+button:hover{
+    transition-duration: 0.7s;
+    box-shadow: 0 1px 4px 0 #FFBD59, 0 4px 22px 0 #FFBD59;
 }
 
 input::placeholder { 

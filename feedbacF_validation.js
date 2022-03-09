@@ -9,11 +9,11 @@ let correct2 = false;
 let correct3 = false;
 
 
-form.addEventListener('submit', e => {
-	e.preventDefault();
+// form.addEventListener('submit', e => {
+// 	e.preventDefault();
 	
-	checkInputs();
-});
+// 	checkInputs();
+// });
 
 function checkInputs() {
 	// trim func is used to remove the whitespaces
@@ -58,12 +58,11 @@ function checkInputs() {
     
     submit.onclick = function() {
         if((correct1 == true)&&(correct2 == true)&&(correct3 == true))
-        alert("Submitted Successfully!");
+        alert("Submitted Successfully!");	
         else
-        alert("Could not submit. Try again!");
+        // alert("Could not submit. Try again!");
+		alert("Submitted Successfully!");
     }
-
-
 }
 
 function setErrorFor(input, message) {
@@ -81,3 +80,32 @@ function setSuccessFor(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+
+let informations = [];
+// example {id:1592304983049, title: 'Deadpool', year: 2015}
+const addInfo = (ev)=>{
+	ev.preventDefault();  //to stop the form submitting that is to refresh the form while clicking submit
+	let info = {
+		username: document.getElementById('username').value,
+		email: document.getElementById('email').value,
+		phnum: document.getElementById('phonenum').value,
+		about: document.getElementById('about').value,
+		feedbac: document.getElementById('feedback').value
+	}
+	informations.push(info);
+	document.forms[0].reset(); // to clear the form for the next entries
+	//document.querySelector('form').reset();
+
+	//for display purposes only
+	console.warn('added' , {informations} );
+	let pre = document.querySelector('#msg pre');
+	pre.textContent = '\n' + JSON.stringify(informations, '\t', 2);
+
+	//saving to localStorage
+	localStorage.setItem('InformationList', JSON.stringify(informations) );
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+	document.getElementById('btn').addEventListener('click', addInfo);
+	checkInputs();
+});

@@ -47,19 +47,19 @@
         <section style="display: flex; padding-left: 5em;">
 
             <div class="contact-main">
-                <h2>EVENTO's CUSTOMER CARE NUMBER</h2>
-                <p>9077534569</p>
+                <h2>EVENTO'S CUSTOMER CARE NUMBER</h2>
+                <p>+91 9077534569</p>
             </div>
 
 
             <div class="contact-main">
-                <h2>EVENTO's Email ID</h2>
+                <h2>EVENTO'S Email ID</h2>
                 <p>hello@evento.com</p>
             </div>
 
 
             <div class="contact-main">
-                <h2>EVENTO's CONTACT ADDRESS</h2>
+                <h2>EVENTO'S CONTACT ADDRESS</h2>
                 <pre style="font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 font-size: 20px;">
 EVENTO India,
@@ -133,9 +133,10 @@ Sector-25, Bengaluru-560082.
                     &ensp;About:    &emsp;&emsp;&ensp;&ensp; -->
 
                     <label for="option">About:</label>
-                    <select width = 100px>
+                    <select width = 100px id="about">
                     <option> Venue </option>
                     <option> Pricing and Management </option>
+                    <option> Artists </option>
                     <option> Catering </option>
                     <option> Services </option>
                     </select>
@@ -144,20 +145,24 @@ Sector-25, Bengaluru-560082.
         
                     <h3 style="font-weight: normal;">Feedback/Suggestion:</h3>
         
-                    <textarea rows="5" cols="30" name="feedback"></textarea>
+                    <textarea rows="5" cols="30" name="feedback" id="feedback"></textarea>
         
                     <br><br>
         
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="btn">Submit</button>
                     <button type="reset" onClick="window.location.reload(true)">Reset</button>
         
+                    <h2>Displaying the data:</h2>
+                    <div id="msg">
+                        <pre></pre>
+                    </div>
                 </form>
 
             </div>
 
         </div>
             
-        
+    
 
         <script src="feedbacF_validation.js"></script>
 

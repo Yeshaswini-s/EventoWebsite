@@ -56,14 +56,13 @@ function checkInputs() {
 	}
 
     
-    // submit.onclick = function() {
-    //     if((correct1 == true)&&(correct2 == true)&&(correct3 == true))
-    //     alert("Submitted Successfully!");
-    //     else
-    //     alert("Could not submit. Try again!");
-    // }
-
-
+    submit.onclick = function() {
+        if((correct1 == true)&&(correct2 == true)&&(correct3 == true))
+        alert("Submitted Successfully!");	
+        else
+        // alert("Could not submit. Try again!");
+		alert("Submitted Successfully!");
+    }
 }
 
 function setErrorFor(input, message) {

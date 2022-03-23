@@ -13,12 +13,39 @@
     <body>
         <nav style="display: flex;">
             <ul class="menu-ul">
-                <li><img src="logo.png" alt="picture of the logo" width="90" height="90" onclick="window.location.href='homepage1.html'" /></li>
+                <li><img src="logo.png" alt="picture of the logo" width="90" height="90 " onclick="window.location.href='homepage1.html'" /></li>
     
     
-                <li><a href="contactus1.html" style="color: white;">Contact</a></li>
-                <li><a href="aboutus1.html" style="color: white;">About</a></li>
-                <li><a href="homepage1.html"style="color: white;">Services</a></li>
+                <li><a href="loginpage1.html" style="color: white;">Login</a></li>
+                <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Contact</button>
+                        <div class="dropdown-content">
+                          <a href="contactus1.html">Contact Us</a>
+                          <a href="aboutus1.html">About Us</a>
+                          <a href="feedback1.html">Feedback</a>
+                          <!-- <a onclick="callFunc()" href="contactus1.html">Feedback</a>  -->
+                        </div>
+                    </div>
+    
+                </li>
+    
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Services</button>
+                        <div class="dropdown-content">
+                          <a href="#">Venue</a>
+                          <a href="#">Catering</a>
+                          <a href="#">Artist Booking</a>
+                          <a href="#">Ticket Booking</a>
+                        </div>
+                    </div>
+    
+                </li>
+    
+                
+                
                 <li><a href="homepage1.html" style="color: white;">Home</a></li>
             </ul>
         </nav>
@@ -65,9 +92,9 @@
         <br><br><br><hr><br>
         <h2><center>Team Members</center></h2>
         
-        <p><center><button id="button4" onclick="frontclickevent()"> Next </button>
+        <p><center><button id="button4" onclick="frontclickevent()" class="allbutton"> Next </button>
         <h3 id="list" style="text-align:center"></h3></center></p>
-        <p><center><button id="button5" onclick="backclickevent2()"> Prev </button></center></p>
+        <p><center><button id="button5" onclick="backclickevent2()" class="allbutton"> Prev </button></center></p>
 
         <br><br><br><hr>
 

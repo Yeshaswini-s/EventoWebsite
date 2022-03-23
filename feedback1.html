@@ -3,92 +3,136 @@
 
 <html>
     <head>
-        <title>FEEDBACK | EVENTO</title>
+        <title>CONTACT | EVENTO</title>
         <link rel="icon" type="image/x-icon" href="evento.ico">
 
         <link rel="stylesheet" href="eventostylesHP.css">
+        <link rel="stylesheet" href="eventocontactP.css">
         <!-- for social media icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
-
-    <style>
-        form{
-            font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-size: 20px;
-            align-items: center;
-            /* border: 1ps solid #FFBD59; */
-        }
-        select {
-        width: 170px;
-        margin: 10px;
-        }
-
-        button{
-            background-color: #FFBD59;
-            width: 10vw;
-            height: 2.5vw;
-            border:  2px solid #FFBD59;
-            border-radius: 5px;
-        }
-
-
-    </style>
-
+    
 
     <body>
         
-        
-
         <nav style="display: flex;">
             <ul class="menu-ul">
-                <li><img src="logo.png" alt="picture of the logo" width="90" height="90" /></li>
+                <li><img src="logo.png" alt="picture of the logo" width="90" height="90" onclick="window.location.href='homepage1.html'" /></li>
     
     
-                <li><a href="contactus1.html" style="color: white;">Contact</a></li>
-                <li><a href="aboutus1.html" style="color: white;">About</a></li>
-                <li><a href="homepage1.html" style="color: white;">Services</a></li>
+                <li><a href="loginpage1.html" style="color: white;">Login</a></li>
+                <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Contact</button>
+                        <div class="dropdown-content">
+                          <a href="contactus1.html">Contact Us</a>
+                          <a href="aboutus1.html">About Us</a>
+                          <a href="#feedbackconnec">Feedback</a> 
+                        </div>
+                    </div>
+    
+                </li>
+    
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Services</button>
+                        <div class="dropdown-content">
+                          <a href="#">Venue</a>
+                          <a href="#">Catering</a>
+                          <a href="#">Artist Booking</a>
+                          <a href="#">Ticket Booking</a>
+                        </div>
+                    </div>
+    
+                </li>
+    
                 <li><a href="homepage1.html" style="color: white;">Home</a></li>
             </ul>
         </nav>
-        <hr>
 
-        <center>
-            <h1>FEEDBACK</h1>
-        </center>
+        <br><br>
 
-        <br>
+        <div class="form-container" id = "feedbackconnec">
+            <div class="form-border">
+                <form id="form" class="form">
+                    <!-- <label for="text">Name:</label><input type="text"  name="name of person" > 
+                    <br>
+                    <label for="email">Email ID:</label><input type="email" name="email of person">
+                    <br>
+                    <label for="tel">Phone number:</label><input type="tel" name="phnum of person">
+                    <br>
+                    <label for="option">About:</label> -->
 
-    <center>
-        <form>
-            Name: &emsp;&emsp;&emsp;&emsp; <input type="text"  name="name of person" >    <br><br>
-            Email ID: &emsp;&emsp;&emsp;<input type="email" name="email of person"> <br><br>
-            Phone number:&emsp;<input type="tel" name="phnum of person"> <br><br>
-            &ensp;About:    &emsp;&emsp;&ensp;&ensp;
-            <select width = 80px>
-            <option> Venue </option>
-            <option> Pricing and Management </option>
-            <option> Catering </option>
-            <option> Services </option>
-            </select>
+                    <div class="form-element">
+                        <input type="text"  name="name of person" placeholder="Name"  id="username"> 
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <br>
+                        <small>Error message</small>
+                    </div>
 
-            <br><br>
+                    <br>
 
-            <h3 style="font-weight: normal;">Feedback/Suggestion:</h3>
+                    <div class="form-element" >
+                        <input type="email" name="email of person" placeholder="example@gmail.com" id="email">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <br>
+                        <small>Error message</small>
 
-            <textarea rows="5" cols="30" name="feedback"></textarea>
+                    </div>
+                    <br>
 
-            <br><br><br>
+                    <div class="form-element">
+                        <input type="tel" name="phnum of person" placeholder="999999999" id="phonenum">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <br>
+                        <small>Error message</small>
 
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
+                    </div>
+                    <br>
+                    
 
-        </form>
-    </center>
+                    <!-- Name: &emsp;&emsp;&emsp;&emsp; <input type="text"  name="name of person" >    <br><br>
+                    Email ID: &emsp;&emsp;&emsp;<input type="email" name="email of person"> <br><br>
+                    Phone number:&emsp;<input type="tel" name="phnum of person"> <br><br>
+                    &ensp;About:    &emsp;&emsp;&ensp;&ensp; -->
 
-        <br>
-        <br>
-        <br>
+                    <label for="option">About:</label>
+                    <select width = 100px id="about">
+                    <option> Venue </option>
+                    <option> Pricing and Management </option>
+                    <option> Artists </option>
+                    <option> Catering </option>
+                    <option> Services </option>
+                    </select>
+        
+                    <br><br>
+        
+                    <h3 style="font-weight: normal;">Feedback/Suggestion:</h3>
+        
+                    <textarea rows="5" cols="30" name="feedback" id="feedback"></textarea>
+        
+                    <br><br>
+        
+                    <button type="submit" id="btn">Submit</button>
+                    <button type="reset" onClick="window.location.reload(true)">Reset</button>
+        
+                    <h2>Displaying the data:</h2>
+                    <div id="msg">
+                        <pre></pre>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+            
     
+
+        <script src="feedbacF_validation.js"></script>
 
         <footer>
 
@@ -109,7 +153,6 @@
             </div>
                 
         </footer>
-
 
 
     </body>

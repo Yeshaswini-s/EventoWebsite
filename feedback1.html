@@ -55,7 +55,7 @@
 
         <div class="form-container" id = "feedbackconnec">
             <div class="form-border">
-                <form id="form" class="form">
+                <form id="form" class="form" action="php/feedback.php" method="post">
                     <!-- <label for="text">Name:</label><input type="text"  name="name of person" > 
                     <br>
                     <label for="email">Email ID:</label><input type="email" name="email of person">
@@ -65,7 +65,7 @@
                     <label for="option">About:</label> -->
 
                     <div class="form-element">
-                        <input type="text"  name="name of person" placeholder="Name"  id="username"> 
+                        <input type="text"  name="name" placeholder="Name"  id="username"> 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <br>
@@ -75,7 +75,7 @@
                     <br>
 
                     <div class="form-element" >
-                        <input type="email" name="email of person" placeholder="example@gmail.com" id="email">
+                        <input type="email" name="email" placeholder="example@gmail.com" id="email">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <br>
@@ -85,7 +85,7 @@
                     <br>
 
                     <div class="form-element">
-                        <input type="tel" name="phnum of person" placeholder="999999999" id="phonenum">
+                        <input type="tel" name="phnum" placeholder="999999999" id="phonenum">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <br>
@@ -101,7 +101,7 @@
                     &ensp;About:    &emsp;&emsp;&ensp;&ensp; -->
 
                     <label for="option">About:</label>
-                    <select width = 100px id="about">
+                    <select width = 100px id="about" name="about">
                     <option> Venue </option>
                     <option> Pricing and Management </option>
                     <option> Artists </option>
@@ -117,13 +117,13 @@
         
                     <br><br>
         
-                    <button class="allbutton" type="submit" id="btn">Submit</button>
+                    <button class="allbutton" type="submit" id="btn" >Submit</button>
                     <button class="allbutton" type="reset" onClick="window.location.reload(true)">Reset</button>
         
-                    <h2>Displaying the data:</h2>
+                    <!-- <h2>Displaying the data:</h2>
                     <div id="msg">
                         <pre></pre>
-                    </div>
+                    </div> -->
                 </form>
 
             </div>
@@ -132,7 +132,7 @@
             
     
 
-        <script src="feedbacF_validation.js"></script>
+        <!-- <script src="feedbacF_validation.js"></script> -->
 
         <footer>
 

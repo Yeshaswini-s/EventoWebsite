@@ -13,7 +13,7 @@ if ($conn->query($sql) === TRUE)
 //echo "New record created successfully<BR><BR><BR>";
 echo "<script LANGUAGE='JavaScript'>
 window.alert('Form Submitted Successfully');
-window.location. href='http://localhost//EventoWebsite/feedback1.html';
+window.location. href='https://evento.pages.dev/feedback1.html';
 </script>";
 
 } 
@@ -22,7 +22,7 @@ else
   // echo "Error: " . $sql . "<br>" . $conn->error;
   echo "<script LANGUAGE='JavaScript'>
 window.alert('Form Submition Unuccessfully');
-window.location. href='http://localhost//EventoWebsite/feedback1.html';
+window.location. href='https://evento.pages.dev/feedback1.html';
 </script>";
 }
 $conn->close();

@@ -1,6 +1,6 @@
 var formElements = document.getElementById("signupForm").elements;
 var formElements2 = document.getElementById("loginForm").elements;
-var baseUrl = 'http://localhost:8080/api/tutorials'
+var baseUrl = 'http://ec2-13-233-244-214.ap-south-1.compute.amazonaws.com:8080/api/tutorials'
 
 
 function insertData() {

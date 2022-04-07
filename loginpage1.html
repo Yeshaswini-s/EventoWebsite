@@ -41,7 +41,7 @@
 				<div class="dropdown">
 					<button class="dropbtn">Services</button>
 					<div class="dropdown-content">
-						<a href="#">Venue</a>
+						<a href="venuedemo.html">Venue</a>
 						<a href="#">Catering</a>
 						<a href="#">Artist Booking</a>
 						<a href="#">Ticket Booking</a>
@@ -56,57 +56,57 @@
 		</ul>
 	</nav>
 
-	<form id="form" class="form" action="php/login.php" method="post">
+	<!-- <form id="form" class="form" action="http://localhost:8080/api/tutorials/create-new" method="post"> -->
 
 	<div class="login-wrap">
 		<div class="login-html">
 			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Log
 				In</label>
 			<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-			<div class="login-form" class="form" action="php/login.php" method="post">
+			<div class="login-form" class="form">
 				<div class="sign-in-htm">
-					<!-- <form id="form" class="form" action="php/login1.php" method="post"> -->
+					<form id="loginForm" class="form">
 						<br>
 						<div class="group">
-							<input id="user" type="text" name="user" class="input" placeholder="Username">
+							<input id="user" type="text" name="UserName" class="input" placeholder="Username">
 						</div>
 						<div class="group">
 							<!-- <label for="pass" class="label">Password</label> -->
-							<input id="pass" type="password" name="password" class="input" placeholder="Password"
+							<input id="pass" type="password" name="Pswd" class="input" placeholder="Password"
 								data-type="password">
 						</div>
 						<div class="group">
-							<input id="check" type="checkbox" class="check" checked>
+							<input id="check" type="checkbox" name="signedin" class="check" checked>
 							<label for="check"><span class="icon"></span> Keep me Signed in</label>
 						</div>
 						<br>
 						<div class="group">
-							<input type="submit" class="button" value="Sign In">
+							<input type="submit" class="button" onclick="checkData(event); " value="Sign In">
 						</div>
 						<div class="hr"></div>
 						<div class="foot-lnk">
 							<a href="#forgot">Forgot Password?</a>
 						</div>
-					<!-- </form> -->
+					</form>
 				</div>
 
 
 
 				<div class="sign-up-htm">
-					<!-- <form id="form" class="form" action="Php/login.php" method="post"></form> -->
+					<form id="signupForm" class="form">
 
 						<br>
 						<div class="group">
 							<!-- <label for="user" class="label">Username</label> -->
-							<input id="user" type="text" name="user" class="input" placeholder="Username">
+							<input id="user" type="text" name="UserName" class="input" placeholder="Username">
 						</div>
 						<div class="group">
 							<!-- <label for="user" class="label">Username</label> -->
-							<input id="name" type="text" name="name" class="input" placeholder="Name">
+							<input id="name" type="text" name="Name" class="input" placeholder="Name">
 						</div>
 						<div class="group">
 							<!-- <label for="pass" class="label">Password</label> -->
-							<input id="password" type="password" name="password" class="input" placeholder="Password"
+							<input id="password" type="text" name="Pswd" class="input" placeholder="Password"
 								data-type="password">
 						</div>
 						<div class="group">
@@ -115,15 +115,15 @@
 						</div>
 						<div class="group">
 							<!-- <label for="pass" class="label">Email Address</label> -->
-							<input id="email" type="text" name="email" class="input" placeholder="Email Address">
+							<input id="email" type="text" name="mail" class="input" placeholder="Email Address">
 						</div>
 						<div class="group">
 							<!-- <label for="pass" class="label">Address</label> -->
-							<input id="address" type="text" name="address" placeholder="Address" class="input">
+							<input id="address" type="text" name="Address_Id" placeholder="Address" class="input">
 						</div>
 						<div class="group">
 							<!-- <label for="pass" class="label">Date of Birth</label> -->
-							<input id="dob" type="text" name="dob" class="input" placeholder="Date of Birth">
+							<input id="dob" type="text" name="Dob" class="input" placeholder="Date of Birth">
 						</div>
 						<!-- <div class="group">
 						<label for="pass" class="label">Gender</label>
@@ -147,19 +147,20 @@
 					</div> -->
 						<br><br>
 						<div class="group">
-							<input type="submit" class="button" value="Sign Up">
+							<input type="submit" class="button" onclick="insertData()" value="Sign Up">
 						</div>
 						<div class="hr"></div>
 						<div class="foot-lnk">
 							<label for="tab-1">Already Member?</a>
 						</div>
 
-					<!-- </form> -->
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	</form>
+	<!-- </form> -->
 
+	<script src="loginform_connection.js"></script>
 
 </body>

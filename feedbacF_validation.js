@@ -57,6 +57,28 @@ function checkInputs() {
 
     
     submit.onclick = function() {
+
+		// this is only GET request/ for doing post, refer fetch post request using javscript.
+		// url = http://localhost:8080/api/tutorials/
+		// fetch(url)
+		// .then((response) => { return response.json(); })
+		// .then( data => {
+		//   let runners = data.results; 
+		//   return runners.map( runner => { 
+		// 	let li = createNode('li'), 
+		// 		img = createNode('img'),
+		// 		span = createNode('span');
+		// 	img.src = runner.picture.medium;  
+		// 	span.innerHTML = `${runner.name.first} ${runner.name.last}`; 
+		// 	append(li, img); 
+		// 	append(li, span);
+		// 	append(ul, li);
+		//   });
+		// })
+		// .catch( error => { console.log(error); })
+
+
+
         if((correct1 == true)&&(correct2 == true)&&(correct3 == true))
         alert("Submitted Successfully!");	
         else

@@ -2,6 +2,7 @@
 // variables and constants
 const cartContainer = document.querySelector('.cart-container');
 const productList = document.querySelector('.product-list');
+const productList2 = document.querySelector('.hotel-list');
 const cartList = document.querySelector('.cart-list');
 const cartTotalValue = document.getElementById('cart-total-value');
 const cartCountInfo = document.getElementById('cart-count-info');
@@ -27,7 +28,13 @@ function eventListeners(){
     });
 
     // add to cart
+    if(productList)
     productList.addEventListener('click', purchaseProduct);
+    
+    if(productList2)
+    productList2.addEventListener('click', purchaseProduct);
+
+    
 
     // delete from cart
     cartList.addEventListener('click', deleteProduct);
@@ -150,8 +157,8 @@ function loadCatering(){
                 <div class = "product-item">
                     <div class = "product-img">
                         <img class="" style="width:90%"     src = "${product.imagelink}" alt = "product image">
-                        <button type = "button" class = "add-to-cart-btn">
-                            <i class = "fas fa-shopping-cart"></i>Add To Cart
+                        <button type = "button" class = "quick-view">
+                            <i class = "fas fa-shopping-cart"></i> Quick View
                         </button>
                     </div>
 
@@ -172,7 +179,9 @@ function loadCatering(){
             
             `;
         });
-        productList.innerHTML = html;
+        productList2.innerHTML = html;
+        productList2.addEventListener('click', showFoods);
+
     })
     .catch(error => {
 
@@ -182,7 +191,113 @@ function loadCatering(){
     })
 }
 
+//end of food list display
+//to show food items
 
+function showFoods(e){
+    if(e.target.classList.contains('quick-view')){
+        let product = e.target.parentElement.parentElement;
+        let uniqueId = product.querySelector('.product-unique-id').textContent;
+        uniqueId = uniqueId.trim()
+
+        showFoodsList(uniqueId);
+    }
+}
+
+function showFoodsList(uniqueId){
+    let foodBody = { "Hotel_Id": uniqueId}
+
+    let hotelExists = localStorage.getItem("hotelSelected");
+    hotelExists = hotelExists ? JSON.parse(hotelExists) : hotelExists
+    if(hotelExists)
+    {
+        if(hotelExists != uniqueId)
+        {
+            let confirmAction = confirm('product from another hotel exists in cart! Do you want to clear the cart')
+            if (confirmAction) {
+                alert("Successfully cleared the cart");
+                let productsReceived = getProductFromStorage();
+                let filteredArr = productsReceived.filter(el => {
+                    return el.HotelId != hotelExists
+                    localStorage.setItem("hotelSelected", uniqueId);
+                })
+
+                localStorage.setItem('products', JSON.stringify(filteredArr))
+                localStorage.setItem('hotelSelected',null)
+                window.location.reload()
+
+            } else {
+                alert("Action canceled");
+                return false;
+            }
+        }
+    }
+    
+
+    fetch(baseUrl+'/foods/get-foods', {
+        method: 'POST',
+        body: JSON.stringify(
+            foodBody),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => {
+           return response.json()}
+            )
+
+        .then((json) => {
+            console.log(json)
+            loadFoodHtml(json)
+            return json
+        }
+            )
+        .catch((error) => {
+            console.error(error)
+          });
+
+}
+
+function loadFoodHtml(json){
+    let html = '';
+    let data = json
+        data.forEach(product => {
+            product['type'] = 'foods';
+            product['subtype'] = 'foods';
+
+            html += `
+            <div class="card">
+                <div class = "product-item">
+                    <div class = "product-img">
+                        <img class="" style="width:90%"     src = "${product.imagelink}" alt = "product image">
+                        <button type = "button" class = "add-to-cart-btn">
+                            <i class = "fas fa-shopping-cart"></i>Add to cart
+                        </button>
+                    </div>
+
+                    <div class = "product-content">
+                        <h3 class = "product-name">${product.Name}</h3>
+                        <span class = "product-capacity">${product.Type_SMDB} typ</span>
+                        <p class = "product-price">Rs ${product.Price}</p>
+                        <p class = "product-hoteldesc"> ${product.Hotel_Name}</p>
+                        <p class = "product-hoteldesc"> ${product.Cuisine}</p>
+
+                        <p class="product-hotel-id" style="display:none">${product.Hotel_Id}</p>
+                        <p class="product-unique-id" style="display:none">${product.Food_id}</p>
+                        <p class="product-type" style="display:none">${product.type}</p>
+                        <p class="product-subtype" style="display:none">${product.subtype}</p>
+
+
+                    </div>
+                </div>
+            </div>
+            
+            `;
+        });
+        productList2.innerHTML = html;
+}
+
+//end of food list display
 
 
 // purchase product
@@ -198,7 +313,9 @@ function getProductInfo(product){
 
     let uniqueId = product.querySelector('.product-unique-id').textContent;
     uniqueId = uniqueId.trim()
+
     let products = getProductFromStorage();
+
     let foundProduct = products.find(el=>{
         return el.uniqueId == uniqueId
     })
@@ -207,16 +324,44 @@ function getProductInfo(product){
         return false;
     }
 
+    let foundHotel = products.find(el=>{
+        return el.type == "hotels" 
+    })
+    if(foundHotel && foundHotel.hasOwnProperty('type')){
+        alert('product from another hotel exists in cart')
+        return false;
+    }
+
+
+
+    
+
 
     let productInfo = {
         id: cartItemID,
         type: product.querySelector('.product-type').textContent,
+        // subtype: product.querySelector('.product-subtype').textContent,
         imagelink: product.querySelector('.product-img img').src,
         name: product.querySelector('.product-name').textContent,
         capacity: product.querySelector('.product-capacity').textContent,
         price: product.querySelector('.product-price').textContent,
         uniqueId:  uniqueId
+
     }
+
+
+    if(productInfo.type == "foods")
+    {
+        productInfo['HotelId'] = product.querySelector('.product-hotel-id').textContent
+    }
+
+    // if(productInfo.type == "foods")
+    // {
+    //     productInfo['HotelId'] = localStorage.getItem("hotelSelected");
+    // }
+
+
+
     cartItemID++;
 
     addToCartList(productInfo);
@@ -240,6 +385,11 @@ function addToCartList(product){
             <i class = "fas fa-times"></i>
         </button>
     `;
+
+    if(product.type == "foods")
+    {
+        localStorage.setItem("hotelSelected", product.HotelId);
+    }
     cartList.appendChild(cartItem);
 }
 

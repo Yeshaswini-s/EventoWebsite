@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Services | Venue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- link for the cart picture -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous">
+    <link rel="stylesheet" href="venpage1style.css">
+    <link rel="stylesheet" href="eventostylesHP.css">
+    <link rel="stylesheet" href="eventocontactP.css">
+</head>
+
+<body onload="loadVenue();">
+
+
+    <header>
+        <nav class="navbar">
+            <ul class="menu-ul">
+                <li><img src="logo.png" alt="picture of the logo" width="90" height="90"
+                        onclick="window.location.href='homepage1.html'" /></li>
+
+                <li>
+                    <div class="cart">
+                        <button type="button" id="cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cart-count-info"></span>
+                        </button>
+
+                        <div class="cart-container">
+                            <div class="cart-list">
+
+                            </div>
+
+                            <div class="cart-total">
+                                <h3>Total: Rs </h3>
+                                <span id="cart-total-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="loginpage1.html" style="color: white;">Login</a></li>
+                <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Contact</button>
+                        <div class="dropdown-content">
+                            <a href="contactus1.html">Contact Us</a>
+                            <a href="aboutus1.html">About Us</a>
+                            <a href="feedback1.html">Feedback</a>
+                        </div>
+                    </div>
+
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Services</button>
+                        <div class="dropdown-content">
+                            <a href="venpage1.html">Venue</a>
+                            <a href="cateringpage1.html">Catering</a>
+                            <a href="artistpage1.html">Artist Booking</a>
+                            <a href="#">Ticket Booking</a>
+                        </div>
+                    </div>
+
+                </li>
+
+                <li><a href="homepage1.html" style="color: white;">Home</a></li>
+            </ul>
+            </div>
+
+
+
+        </nav>
+    </header>
+
+
+
+
+
+    <br><br><br>
+    <!-- products section  -->
+    <section class="products">
+        <div class="container">
+            <h2>Venues</h2>
+            <div class="product-list">
+
+            </div>
+        </div>
+    </section>
+    <!-- end of products section-->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <footer>
+        <div class="share">
+            <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+            <a href="https://in.linkedin.com/" class="fab fa-linkedin"></a>
+            <a href="https://in.pinterest.com/" class="fab fa-pinterest"></a>
+        </div>
+        <div class="copyright">
+            <p>
+                <center>Copyright 2022 EVENTO</center>
+            </p>
+            <p>
+                <center>All rights reserved.</center>
+            </p>
+    </footer>
+    <!-- end of footer -->
+
+
+
+
+
+
+
+    <script src="venapp.js"></script>
+</body>
+
+</html>

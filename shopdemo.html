@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Generics | Store</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="shopdemostyles.css" />
+    
+</head>
+
+<body onload="getVenue(event)">
+    <div>
+        <h2>Shop With Ease</h2>
+
+        <button id='cart-button' class="trigger cart-button-style">Show Cart</button>
+
+
+        <div id="shop" class="row">
+
+
+        </div>
+
+    </div>
+    <div id='cart-wrapper' class="slider close">
+        <div id='cart'>
+            <div id="cart-products-wrapper">
+                <table id="cart-table">
+                    <thead id="cart-table-header">
+                        <th class="name-col">Product Name</th>
+                        <th class="quantity-col">Days</th>
+                        <th class="price-col">Price</th>
+                        <th class="updated-price-col">Updated Price</th>
+                        <th class="update-col">Update</th>
+                        <th class="remove-col">Remove</th>
+                    </thead>
+                    <tbody id="cart-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id='amount-controls'>
+            <div id="cart-amount-wrapper">
+                <table>
+                    <tbody>
+                        <tr id='subtotal-wrappper'>
+                            <td id="subtotal-label">Subtotal:</td>
+                            <td id="subtotal">0.00</td>
+                        </tr>
+
+                        <tr id='total-wrapper'>
+                            <td id="total-label">Total:</td>
+                            <td id="total">0.00</td>
+                        </tr>
+
+                        <tr id="promo-checkout">
+                            <td id="promo-wrapper">
+                                <input id="promo" placeholder="Input Promo Code">
+                                <button id="apply-promo">Apply Promo</button>
+                            </td>
+
+                            <td>
+                                <button id="checkout">Checkout</button>
+                            </td>
+
+                            <td>
+                                <button id="ks" class="keep-shopping">Keep Shopping</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="store.js"></script>
+</body>
+
+</html>

@@ -304,6 +304,34 @@ nav li a:hover{
     -o-transition: var(--trans);
     opacity: 0;
 }
+
+/* .quick-view class css */
+.quick-view{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border: none;
+    padding: 0.75rem 1.2rem;
+    font-size: 1.05rem;
+    background-color: var(--baltic-sea);
+    color: #fff;
+    transition: var(--trans);
+    -webkit-transition: var(--trans);
+    -moz-transition: var(--trans);
+    -ms-transition: var(--trans);
+    -o-transition: var(--trans);
+    opacity: 0;
+}
+.product-item:hover .quick-view{
+    opacity: 1;
+}
+
+
 .product-item:hover .add-to-cart-btn{
     opacity: 1;
 }
@@ -323,6 +351,12 @@ nav li a:hover{
 .product-capacity{
     margin:  0.8rem 0;
     font-size: 1.5em;
+    color: #F1D18A;
+}
+
+.product-hoteldesc{
+    margin:  0.6rem 0;
+    font-size: 1.2em;
     color: #F1D18A;
 }
 
@@ -371,6 +405,12 @@ nav li a:hover{
         column-gap: 2rem;
         row-gap:2rem;
     }
+    .hotel-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap:2rem;
+    }
 }
 
 @media screen and (min-width: 992px){
@@ -390,6 +430,9 @@ nav li a:hover{
         text-align: left;
     }
     .product-list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .hotel-list{
         grid-template-columns: repeat(3, 1fr);
     }
     .footer-banner{
@@ -414,6 +457,9 @@ nav li a:hover{
         font-size: 3.5rem;
     }
     .product-list{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .hotel-list{
         grid-template-columns: repeat(4, 1fr);
     }
 }

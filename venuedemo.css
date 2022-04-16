@@ -59,3 +59,11 @@
   img {
     border-radius: 10px 10px 10px 10px;
   }
+  .icon-star{
+    color: white;
+    padding-right: 0.4em;
+  }
+
+  .icon-star::before{
+    content:   "✭";
+  }

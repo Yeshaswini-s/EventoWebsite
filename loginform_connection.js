@@ -1,9 +1,10 @@
 var formElements = document.getElementById("signupForm").elements;
 var formElements2 = document.getElementById("loginForm").elements;
-var baseUrl = 'http://ec2-13-233-244-214.ap-south-1.compute.amazonaws.com:8080/api/tutorials'
+var baseUrl = 'http://ec2-13-233-244-214.ap-south-1.compute.amazonaws.com:8080/api'
 
 
-function insertData() {
+function insertData(e) {
+    e.preventDefault()
     var postData = {};
     for (var i = 0; i < formElements.length; i++)
         if (formElements[i].type != "submit")//we dont want to include the submit-buttom
@@ -23,7 +24,7 @@ function insertData() {
         // postData['UserName'] = postData['UserName'] + (new Date()).getTime()
     //test end
 
-    fetch(baseUrl+'/create-new', {
+    fetch(baseUrl+'/tutorials/create-new', {
         method: 'POST',
         body: JSON.stringify(
             postData),
@@ -55,7 +56,7 @@ function checkData(e) {
         if (formElements2[i].type != "submit" || formElements2[i].name != "signedin" )//we dont want to include the submit-buttom
             postData1[formElements2[i].name] = formElements2[i].value;
 
-    fetch(baseUrl+'/login', {
+    fetch(baseUrl+'/tutorials/login', {
         method: 'POST',
         body: JSON.stringify(
             postData1),

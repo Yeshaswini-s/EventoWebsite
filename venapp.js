@@ -277,7 +277,7 @@ function loadFoodHtml(json){
 
                     <div class = "product-content">
                         <h3 class = "product-name">${product.Name}</h3>
-                        <span class = "product-capacity">${product.Type_SMDB} typ</span>
+                        <span class = "product-capacity">${product.Type_SMDB} </span>
                         <p class = "product-price">Rs ${product.Price}</p>
                         <p class = "product-hoteldesc"> ${product.Hotel_Name}</p>
                         <p class = "product-hoteldesc"> ${product.Cuisine}</p>
@@ -374,7 +374,7 @@ function addToCartList(product){
     cartItem.classList.add('cart-item');
     cartItem.setAttribute('data-id', `${product.id}`);
     cartItem.innerHTML = `
-        <img src = "${product.imagelink}" alt = "product image" style="width:80%">
+        <img src = "${product.imagelink}" alt = "product image" style="width:80%; height:7em">
         <div class = "cart-item-info">
             <h3 class = "cart-item-name">${product.name}</h3>
             <span class = "cart-item-capacity">${product.capacity}</span>
@@ -454,4 +454,252 @@ function deleteProduct(e){
     });
     localStorage.setItem('products', JSON.stringify(updatedProducts)); // updating the product list after the deletion
     updateCartInfo();
+}
+
+
+
+
+
+
+
+
+
+//search option for artists
+
+function showArtistsListByName(Name){
+    let artistBody = { "Name": Name}
+
+    // if(artistBody['Name'] == null)
+    // {
+    //     alert('Please enter a artist name to search first! It cant be empty!!')
+    //     return false;
+    // }
+
+    fetch(baseUrl+'/artists/get-new-byname', {
+        method: 'POST',
+        body: JSON.stringify(
+            artistBody),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => {
+           return response.json()}
+            )
+
+        .then((json) => {
+            console.log(json)
+            loadArtistHtmlSearch(json)
+            return json
+        }
+            )
+        .catch((error) => {
+            console.error(error)
+          });
+
+}
+
+function loadArtistHtmlSearch(json){
+    let html = '';
+    let data = json
+        data.forEach(product => {
+            product['type'] = 'artists';
+
+            html += `
+            <div class="card">
+                <div class = "product-item">
+                    <div class = "product-img">
+                        <img class="" style="width:90%"     src = "${product.imagelink}" alt = "product image">
+                        <button type = "button" class = "add-to-cart-btn">
+                            <i class = "fas fa-shopping-cart"></i>Add To Cart
+                        </button>
+                    </div>
+
+                    <div class = "product-content">
+                        <h3 class = "product-name">${product.Name}</h3>
+                        <span class = "product-capacity">${product.speciality} spec</span>
+                        <p class = "product-price">Rs ${product.price}</p>
+
+                        
+                        <p class="product-unique-id" style="display:none">${product.Artist_id}</p>
+                        <p class="product-type" style="display:none">${product.type}</p>
+
+
+                    </div>
+                </div>
+            </div>
+            
+            `;
+        });
+        productList.innerHTML = html;
+}
+
+
+
+
+//search option for Venues
+
+function showVenueListByName(Name){
+    let venueBody = { "Name": Name}
+
+    // if(venueBody['Name'] == null)
+    // {
+    //     alert('Please enter a venue name to search first! It cant be empty!!')
+    //     return false;
+    // }
+
+    fetch(baseUrl+'/venues/get-by-venuename', {
+        method: 'POST',
+        body: JSON.stringify(
+            venueBody),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => {
+           return response.json()}
+            )
+
+        .then((json) => {
+            console.log(json)
+            loadVenueHtmlSearch(json)
+            return json
+        }
+            )
+        .catch((error) => {
+            console.error(error)
+          });
+
+}
+
+function loadVenueHtmlSearch(json){
+    let html = '';
+    let data = json
+        data.forEach(product => {
+            product['type'] = 'venue';
+
+            html += `
+            <div class="card">
+                <div class = "product-item">
+                    <div class = "product-img">
+                        <img class="" style="width:90%"     src = "${product.imagelink}" alt = "product image">
+                        <button type = "button" class = "add-to-cart-btn">
+                            <i class = "fas fa-shopping-cart"></i>Add To Cart
+                        </button>
+                    </div>
+
+                    <div class = "product-content">
+                        <h3 class = "product-name">${product.Vname}</h3>
+                        <span class = "product-capacity">${product.capacity} cap</span>
+                        <p><span style="background-color: #48c479; padding:0.5em; color:white;margin-left: 1.2em;border-radius: 0.5em;"> <span class="icon-star"></span>${product.vratings}<span></span></p>
+                        <p class = "product-price">Rs ${product.Vprice}</p>
+
+                        
+
+                        
+                        <p class="product-unique-id" style="display:none">${product.Vid}</p>
+                        <p class="product-type" style="display:none">${product.type}</p>
+
+
+                    </div>
+                </div>
+            </div>
+            
+            `;
+        });
+        productList.innerHTML = html;
+}
+
+
+
+
+
+//payments page create
+function createOrders(e) {
+    e.preventDefault()
+    let postData1 = {}
+
+    postData1["jdoc"] = localStorage.getItem("products")
+    postData1["user_id"] = localStorage.getItem("user_id")
+
+
+    fetch(baseUrl+'/orders/create-new', {
+        method: 'POST',
+        body: JSON.stringify(
+            postData1),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => {
+           return response.json()}
+            )
+
+        .then((json) => {
+            console.log(json)
+            return json
+        }
+            )
+        .catch((error) => {
+            console.error(error)
+          });
+    // window.alert('SignUp Successfull');
+
+    // window.location.reload();
+}
+
+
+
+
+
+
+
+
+
+//payments page loading
+function loadPayments(){
+    fetch(baseUrl + '/orders/get-new')
+    .then(response => response.json())
+    .then(data =>{
+        let html = '';
+        data.forEach(product => {
+            product['type'] = 'hotels';
+
+            html += `
+            <div class="card">
+                <div class = "product-item">
+                    <div class = "product-img">
+                        <img class="" style="width:90%"     src = "${product.imagelink}" alt = "product image">
+                        <button type = "button" class = "quick-view">
+                            <i class = "fas fa-shopping-cart"></i> Quick View
+                        </button>
+                    </div>
+
+                    <div class = "product-content">
+                        <h3 class = "product-name">${product.Name}</h3>
+                        <span class = "product-capacity">${product.Capacity} cap</span>
+                        <p class = "product-price">Rs ${product.Est_Cost}</p>
+                        <p class = "product-cuisine">${product.Cuisine}</p>
+
+                        
+                        <p class="product-unique-id" style="display:none">${product.Hotel_id}</p>
+                        <p class="product-type" style="display:none">${product.type}</p>
+
+
+                    </div>
+                </div>
+            </div>
+            
+            `;
+        });
+        productList2.innerHTML = html;
+        productList2.addEventListener('click', showFoods);
+
+    })
+    .catch(error => {
+
+        //<p style="display:hidden"> ${product.type}</p>
+        // alert(`User live server or local server`);
+        //URL scheme must be "http" or "https" for CORS request. You need to be serving your index.html locally or have your site hosted on a live server somewhere for the Fetch API to work properly.
+    })
 }

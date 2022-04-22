@@ -9,6 +9,13 @@
         <link rel="stylesheet" href="eventocontactP.css">
         <!-- for social media icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+         <!-- for cart -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="venpage1style.css">
+
     </head>
     
 
@@ -18,45 +25,68 @@
             <h1><center>MOVEY - Easy Moving</center></h1>
         </header> -->
 
-        <nav style="display: flex;">
-            <ul class="menu-ul">
-                <li><img src="logo.png" alt="picture of the logo" width="90" height="90 " onclick="window.location.href='homepage1.html'" /></li>
+        <header>
+            <nav class="navbar">
+                <ul class="menu-ul">
+                    <li><img src="logo.png" alt="picture of the logo" width="90" height="90"
+                            onclick="window.location.href='homepage1.html'" /></li>
     
+                    <li>
+                        <div class="cart">
+                            <button type="button" id="cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="cart-count-info"></span>
+                            </button>
     
-                <li><a href="loginpage1.html" style="color: white;">Login</a></li>
-                <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn">Contact</button>
-                        <div class="dropdown-content">
-                          <a href="contactus1.html">Contact Us</a>
-                          <a href="aboutus1.html">About Us</a>
-                          <a href="feedback1.html">Feedback</a>
-                          <!-- <a onclick="callFunc()" href="contactus1.html">Feedback</a>  -->
+                            <div class="cart-container">
+                                <div class="cart-list">
+    
+                                </div>
+    
+                                <div class="cart-total">
+                                    <h3>Approx Total: Rs </h3>
+                                    <span id="cart-total-value"></span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </li>
     
-                </li>
-    
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn">Services</button>
-                        <div class="dropdown-content">
-                          <a href="venuedemo.html">Venue</a>
-                          <a href="#">Catering</a>
-                          <a href="#">Artist Booking</a>
-                          <a href="#">Ticket Booking</a>
+                    <li><a href="loginpage1.html" style="color: white;">Login</a></li>
+                    <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Contact</button>
+                            <div class="dropdown-content">
+                                <a href="contactus1.html">Contact Us</a>
+                                <a href="aboutus1.html">About Us</a>
+                                <a href="feedback1.html">Feedback</a>
+                            </div>
                         </div>
-                    </div>
     
-                </li>
+                    </li>
     
-                
-                
-                <li><a href="homepage1.html" style="color: white;">Home</a></li>
-            </ul>
-        </nav>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Services</button>
+                            <div class="dropdown-content">
+                                <a href="venpage1.html">Venue</a>
+                                <a href="cateringpage1.html">Catering</a>
+                                <a href="artistpage1.html">Artist Booking</a>
+                                <a href="#">Ticket Booking</a>
+                            </div>
+                        </div>
     
+                    </li>
+    
+                    <li><a href="homepage1.html" style="color: white;">Home</a></li>
+                </ul>
+                </div>
+    
+    
+    
+            </nav>
+        </header>
+        <br><br><br>
 
         <div class="bgimage center-end">
             <div class="bg-contactus">
@@ -215,7 +245,7 @@ Sector-25, Bengaluru-560082.
 
 
 
-       
+       <script src="venapp.js"></script>
 
        
 

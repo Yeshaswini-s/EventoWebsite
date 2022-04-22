@@ -2,14 +2,16 @@
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Services | Venue</title>
+    <link rel="icon" type="image/x-icon" href="evento.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- link for the cart picture -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-            crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous">
     <link rel="stylesheet" href="venpage1style.css">
     <link rel="stylesheet" href="eventostylesHP.css">
     <link rel="stylesheet" href="eventocontactP.css">
@@ -78,13 +80,18 @@
 
 
         </nav>
+
+        <br><br><br><br><br><br><br>
+        <div class="searchbar">
+            <button type="button" class="filter-button">Filter</button>
+            <input type="text" placeholder=" Search Venues" class="search-bar-button" id="searchText">
+            <button type="submit" class="search-image-button"
+                onclick="showVenueListByName(document.getElementById('searchText').value)"><i
+                    class="fa fa-search"></i></button>
+        </div>
+
     </header>
 
-
-
-
-
-    <br><br><br>
     <!-- products section  -->
     <section class="products">
         <div class="container">

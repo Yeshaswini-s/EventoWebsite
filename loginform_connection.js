@@ -74,6 +74,7 @@ function checkData(e) {
             console.log(json['validPassword']);
             if(json['validPassword']){
                 alert('valid')
+                localStorage.setItem("user_id", json['UserID'])
             }
             else{
                 alert('invalid user')

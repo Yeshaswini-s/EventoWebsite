@@ -86,7 +86,6 @@ nav li a:hover{
     font-size: 20px; 
     text-align: center; 
     padding: 2px;
-    margin-top: 5px;
     position: fixed;
     top: 0;
     left: 50%;
@@ -522,4 +521,9 @@ nav li a:hover{
 
   .icon-star::before{
     content:   "✭";
+  }
+
+
+  .grand-total{
+      background-color: #FFBD59;
   }

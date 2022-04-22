@@ -5,17 +5,26 @@
 <head>
     <title>Home | EVENTO</title>
     <link rel="icon" type="image/x-icon" href="evento.ico">
+    
+    <!-- bootstrap and jquery -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 
     
     <!-- for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+
+    <!-- for cart -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
             crossorigin="anonymous">
+    <link rel="stylesheet" href="sponserCSS.css">
     <link rel="stylesheet" href="venpage1style.css">
     <link rel="stylesheet" href="eventostylesHP.css">
     <link rel="stylesheet" href="eventocontactP.css">
+
 
 
 
@@ -39,7 +48,7 @@
     </script> -->
 </head>
 
-<body>
+<body onload="loadSponsor();">
     <!-- <header style="background-color: #E43F5A; text-align: center; top: 0; left: 0; width: 100%;">
 
             <h1 style="color:#D4ECDD;; display: inline-block; border: 1px solid; border-radius: 30px;"> </h1>
@@ -192,7 +201,7 @@
             <div class="box">
                 <img src="buffet2.jpg" alt="" width="250" height="350">
                 <h3>Catering Booking</h3>
-                <a href="#" class="btn">View</a>
+                <a href="cateringpage1.html" class="btn">View</a>
             </div>
     
             <div class="box">
@@ -207,6 +216,17 @@
                 <a href="#" class="btn">View</a>
             </div>
         </div>
+    </section>
+
+
+
+    <section class="sponsor-menu" > 
+        <div class="slider">
+            <div class="slide-track">
+                <br><br>
+              
+            </div>
+          </div>
     </section>
 
     
@@ -265,6 +285,7 @@
 
 
     <script src="venapp.js"></script>
+    <script src="sponsersCarousel.js"></script>
 
 </body>
 

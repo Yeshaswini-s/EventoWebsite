@@ -244,7 +244,11 @@ section.join{
     letter-spacing: .2rem;
 }
 
-
+.menu{
+    display: flex;
+    align-items: center;
+    place-content: center;
+}
 
 .menu .service-menu{
     width: max-content;
@@ -283,6 +287,10 @@ section.join{
     color: black;
 }
 
+
+.sponsor-header{
+    font-size: 3em;
+}
 
 footer{
     background-color: black;

@@ -19,7 +19,7 @@
 
     </head>
 
-    <body>
+    <body onload="loadQuantity();"> 
         <header>
             <nav class="navbar">
                 <ul class="menu-ul">
@@ -41,6 +41,19 @@
                                 <div class="cart-total">
                                     <h3>Approx Total: Rs </h3>
                                     <span id="cart-total-value"></span>
+                                </div>
+
+                                <div class="quantity-fooditems">
+                                    <input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of People Booking For">
+                                </div>
+
+                                <div class="grand-total">
+                                    <!-- <a href="checkoutpage.html"> -->
+                                        <button type = "button" class = "grand-total-button allbutton" onclick="createOrders(event);">
+                                            CHECKOUT
+                                        </button>
+                                    <!-- </a> -->
+
                                 </div>
                             </div>
                         </div>
@@ -67,7 +80,7 @@
                                 <a href="venpage1.html">Venue</a>
                                 <a href="cateringpage1.html">Catering</a>
                                 <a href="artistpage1.html">Artist Booking</a>
-                                <a href="#">Ticket Booking</a>
+                                <!-- <a href="#">Ticket Booking</a> -->
                             </div>
                         </div>
     

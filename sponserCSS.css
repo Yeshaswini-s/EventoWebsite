@@ -2,7 +2,7 @@
 .carousel-image {
   width: 100px;
   height: 100px;
-  animation: scroll 48s linear infinite;
+  animation: scroll 65s linear infinite;
 }
 
 .slide-track {
@@ -15,8 +15,8 @@
 .slider {
   background: repeat-x;
   margin-top: 110px;
-  background-color: whitesmoke;
-  padding: 8em 2em;
+  background-color: black;
+  padding: 0em 2em;
 }
 
 @keyframes scroll {

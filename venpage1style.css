@@ -527,3 +527,14 @@ nav li a:hover{
   .grand-total{
       background-color: #FFBD59;
   }
+
+  .quantity-fooditems{
+      background-color: #F1D18A;
+  }
+
+  .quantity-fooditems input{
+      background-color: black;
+      height: 4em;
+      width: 17em;
+      color: #e99c2f;
+  }

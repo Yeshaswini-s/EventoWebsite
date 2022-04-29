@@ -535,6 +535,7 @@ nav li a:hover{
   .quantity-fooditems input{
       background-color: black;
       height: 4em;
-      width: 17em;
+      width: 34.6em;
+      text-align: center;
       color: #e99c2f;
   }

@@ -3,20 +3,29 @@
 <html lang="en-US">
 
 <head>
-	<title>Home | EVENTO</title>
-	<link rel="icon" type="image/x-icon" href="evento.ico">
 
-	<link rel="stylesheet" href="eventostylesHP.css">
+	 <title>Home | LOGIN</title>
+    <link rel="icon" type="image/x-icon" href="evento.ico">
+    
+    <!-- bootstrap and jquery -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+    
+    <!-- for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <!-- for cart -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous">
+    <link rel="stylesheet" href="sponserCSS.css">
+    <link rel="stylesheet" href="venpage1style.css">
+    <link rel="stylesheet" href="eventostylesHP.css">
+    <!-- <link rel="stylesheet" href="eventocontactP.css"> -->
 	<link rel="stylesheet" href="eventologinpage.css">
-	<!-- for social media icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-	 <!-- for cart -->
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-	 integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-	 crossorigin="anonymous">
-	 <link rel="stylesheet" href="venpage1style.css">
-
 
 </head>
 
@@ -47,7 +56,7 @@
 							</div>
 
 							<div class="quantity-fooditems">
-								<input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of People Booking For">
+								<input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of Guests">
 							</div>
 
 							<div class="grand-total">
@@ -125,7 +134,7 @@
 						</div>
 						<br>
 						<div class="group">
-							<input type="submit" class="button" onclick="checkData(event); " value="Sign In">
+							<input type="submit" class="button" onclick="checkData(event); " value="Log In">
 						</div>
 						<div class="hr"></div>
 						<div class="foot-lnk">

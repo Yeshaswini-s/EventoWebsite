@@ -1,0 +1,163 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTO | START</title>
+    <link rel="icon" type="image/x-icon" href="evento.ico">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* background-color: #FFBD59; */
+            /* background-image: url(venueimgfinnn.png);  */
+            background:url(promptbg.png) no-repeat center;
+            background-size: 100% 100%;
+            
+            font-family: "Space Mono", monospace;
+        }
+
+        form {
+            background-color: black;
+
+            display: flex;
+            flex-direction: column;
+            width: clamp(200px, 50vw, 400px);
+            height: clamp(450px, 50vw, 400px);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+            transition: box-shadow 0.25s ease-in;
+        }
+
+        form:hover {
+            /* box-shadow: rgba(255, 255, 255, 0.5) 5px 3px, */
+                /* rgba(255, 255, 255, 0.4) 10px 6px, rgba(255, 255, 255, 0.3) 15px 9px; */
+
+                box-shadow: 0 1px 4px 0 #FFBD59, 0 4px 22px 0 #FFBD59;
+        }
+
+        input,
+        textarea {
+            background: none;
+            outline: none;
+            border: 1px solid #fff;
+            padding: 10px;
+            color: #fff;
+            margin: 3px 0 10px;
+            transition: all 0.5s ease;
+            resize: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            box-shadow: 0 0 5px #fff;
+        }
+
+        ::placeholder {
+            color: #bdbdbd;
+        }
+
+        textarea::-webkit-scrollbar {
+            width: 10px;
+            border-left: 2px solid #fff;
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+            border-left: 2px solid #fff;
+            background-color: #fff;
+        }
+
+        form h1 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: clamp(20px, 5vw, 35px);
+        }
+
+        .date-btn {
+            /* text-decoration: none; */
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            background-color: #ffbd59;
+            border: 3px solid black;
+            color: black;
+            cursor: pointer;
+            transition: all 0.8s ease;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .date-btn :hover {
+            /* text-decoration: none; */
+            background-color: #FFBD59;
+            color: #212121;
+        }
+
+        label {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        #myVideo {
+        /* background: url(startpageBackground.mp4);  */
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        }
+        .content {
+        position: fixed;
+        display: flex;
+        place-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="startpageBackground.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+
+        <form class="date-entered" action="venpage1.html"> 
+            <h1>Tell us the date you are booking the services for...</h1>
+            <br>
+            <label for="text">Date</label>
+            <input type="date" id="dateEntered" onblur="saveDateOfBooking();" style="color-scheme: dark;" required>
+            <br>
+    <!-- 
+            <label for="text">Your message</label>
+            <textarea placeholder="Your Message..." class="form-control" name="message" rows="10" required></textarea> -->
+            
+            <button class="date-btn" onclick="checkdate();" type="submit">Submit</button>
+            <!-- <a href="venpage1.html" class="date-btn" onclick="checkdate();">Submit</a> -->
+    
+            
+        </form>
+
+    </div>
+    
+
+    
+    <script src="venapp2.js"></script>
+</body>
+
+</html>

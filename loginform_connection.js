@@ -1,6 +1,6 @@
 var formElements = document.getElementById("signupForm").elements;
 var formElements2 = document.getElementById("loginForm").elements;
-var baseUrl = 'http://ec2-13-233-244-214.ap-south-1.compute.amazonaws.com:8080/api'
+var baseUrl = 'http://localhost:8080/api'
 
 
 function insertData(e) {
@@ -43,7 +43,8 @@ function insertData(e) {
     .catch((error) => {
         console.error(error)
       });
-    // window.alert('SignUp Successfull');
+    alert('SignUp Successfull');
+    window.location.href = "loginpage1.html";
 
     // window.location.reload();
 }
@@ -75,6 +76,8 @@ function checkData(e) {
             if(json['validPassword']){
                 alert('valid')
                 localStorage.setItem("user_id", json['UserID'])
+                
+                window.location.href = "homepage1.html";
             }
             else{
                 alert('invalid user')

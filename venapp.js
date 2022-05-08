@@ -47,56 +47,116 @@ function updateCartInfo(){
     cartTotalValue.textContent = cartInfo.total;
 }
 
-// load product items content form Venue table
-function loadVenue(){
-    fetch(baseUrl + '/venues/get-new')
-    .then(response => response.json())
-    .then(data =>{
-        let html = '';
-        data.forEach(product => {
-            product['type'] = 'venue';
-
-            html += `
-            <div class="card">
-                <div class = "product-item">
-                    <div class = "product-img">
-                        <img class="" style="width:90%"     src = "${product.imagelink}" alt = "product image">
-                        <button type = "button" class = "add-to-cart-btn">
-                            <i class = "fas fa-shopping-cart"></i>Add To Cart
-                        </button>
-                    </div>
-
-                    <div class = "product-content">
-                        <h3 class = "product-name">${product.Vname}</h3>
-                        <span class = "product-capacity">${product.capacity} cap</span>
-                        <p><span style="background-color: #48c479; padding:0.5em; color:white;margin-left: 1.2em;border-radius: 0.5em;"> <span class="icon-star"></span>${product.vratings}<span></span></p>
-                        <p class = "product-price">Rs ${product.Vprice}</p>
-
-                        
-
-                        
-                        <p class="product-unique-id" style="display:none">${product.Vid}</p>
-                        <p class="product-type" style="display:none">${product.type}</p>
 
 
-                    </div>
-                </div>
-            </div>
-            
-            `;
-        });
-        productList.innerHTML = html;
-    })
-    .catch(error => {
 
-        //<p style="display:hidden"> ${product.type}</p>
-        // alert(`User live server or local server`);
-        //URL scheme must be "http" or "https" for CORS request. You need to be serving your index.html locally or have your site hosted on a live server somewhere for the Fetch API to work properly.
-    })
+// load product items content form Venue table based on date
+function getDateVenueDisplay()
+{
+    let dateBooked;
+    dateBooked = localStorage.getItem("dateBooked");
+    if(dateBooked)
+    {
+        showVenueListByDate(dateBooked)
+        
+    }
+    else
+    {
+        alert("Error in loading the page! Please select the date first.");
+        
+    }
 }
 
 
+
+function showVenueListByDate(date){
+    let venueBody = { "dateBooked": date}
+
+    // if(venueBody['Name'] == null)
+    // {
+    //     alert('Please enter a venue name to search first! It cant be empty!!')
+    //     return false;
+    // }
+
+    fetch(baseUrl+'/venues/get-new', {
+        method: 'POST',
+        body: JSON.stringify(
+            venueBody),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => {
+           return response.json()}
+            )
+
+        .then((json) => {
+            console.log(json)
+            loadVenueHtmlSearch(json)
+            return json
+        }
+            )
+        .catch((error) => {
+            console.error(error)
+          });
+
+}
+
+
+
+
+
+// function loadVenue(){
+//     fetch(baseUrl + '/venues/get-new')
+//     .then(response => response.json())
+//     .then(data =>{
+//         let html = '';
+//         data.forEach(product => {
+//             product['type'] = 'venue';
+
+//             html += `
+//             <div class="card">
+//                 <div class = "product-item">
+//                     <div class = "product-img">
+//                         <img class="" style="width:90%"     src = "${product.imagelink}" alt = "product image">
+//                         <button type = "button" class = "add-to-cart-btn">
+//                             <i class = "fas fa-shopping-cart"></i>Add To Cart
+//                         </button>
+//                     </div>
+
+//                     <div class = "product-content">
+//                         <h3 class = "product-name">${product.Vname}</h3>
+//                         <span class = "product-capacity">${product.capacity} people</span>
+//                         <p><span style="background-color: #48c479; padding:0.5em; color:white;margin-left: 1.2em;border-radius: 0.5em;"> <span class="icon-star"></span>${product.vratings}<span></span></p>
+//                         <p class = "product-price">Rs ${product.Vprice}</p>
+
+                        
+
+                        
+//                         <p class="product-unique-id" style="display:none">${product.Vid}</p>
+//                         <p class="product-type" style="display:none">${product.type}</p>
+
+
+//                     </div>
+//                 </div>
+//             </div>
+            
+//             `;
+//         });
+//         productList.innerHTML = html;
+//     })
+//     .catch(error => {
+
+//         //<p style="display:hidden"> ${product.type}</p>
+//         // alert(`User live server or local server`);
+//         //URL scheme must be "http" or "https" for CORS request. You need to be serving your index.html locally or have your site hosted on a live server somewhere for the Fetch API to work properly.
+//     })
+// }
+
+
 // load product items content form Artists table
+
+
 function loadArtist(){
     fetch(baseUrl + '/artists/get-new')
     .then(response => response.json())
@@ -117,7 +177,7 @@ function loadArtist(){
 
                     <div class = "product-content">
                         <h3 class = "product-name">${product.Name}</h3>
-                        <span class = "product-capacity">${product.speciality} spec</span>
+                        <span class = "product-capacity">${product.speciality} </span>
                         <p class = "product-price">Rs ${product.price}</p>
 
                         
@@ -164,7 +224,6 @@ function loadCatering(){
 
                     <div class = "product-content">
                         <h3 class = "product-name">${product.Name}</h3>
-                        <span class = "product-capacity">${product.Capacity} cap</span>
                         <p class = "product-price">Rs ${product.Est_Cost}</p>
                         <p class = "product-cuisine">${product.Cuisine}</p>
 
@@ -766,6 +825,7 @@ function createOrders(e) {
                 });
 
                 alert("Your Order was Booked successfully!!!");
+                window.location.href='orderdisplay.html';
 
         }
         else
@@ -791,6 +851,13 @@ function saveQuantity(){
     localStorage.setItem("numberOfPeeps", numberOfPeeps);
 }
 
+function saveDateOfBooking(){
+    let dateBooked;
+    dateBooked = document.getElementById("dateEntered").value
+    localStorage.setItem("dateBooked", dateBooked);
+}
+
+
 function loadQuantity(){
     let numberOfPeeps;
     numberOfPeeps = localStorage.getItem("numberOfPeeps");
@@ -800,3 +867,36 @@ function loadQuantity(){
         document.getElementById("foodQuantity").value = numberOfPeeps;
     }
 }
+
+function loadDateOfBooking(){
+    let dateBooked;
+    dateBooked = localStorage.getItem("dateBooked");
+    // dateBooked = dateBooked ? JSON.parse(dateBooked) : dateBooked
+    
+
+    if(dateBooked)
+    {
+        // document.getElementById("dateEnteredvenpg").value = dateBooked;
+        var dateControl = document.querySelector('input[type="date"]');
+        dateControl.value = dateBooked;
+        console.log(dateControl.value);
+    }
+}
+
+function loadVidPage()
+{
+    let dateBooked;
+    dateBooked = localStorage.getItem("dateBooked");
+    if(dateBooked == "" || dateBooked == 'undefined' || dateBooked == null )
+    {
+        document.getElementById("myAnchor").href = "startpage.html";
+        
+    }
+    else
+    {
+        window.location.href='venpage1.html';
+        
+    }
+}
+
+

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="eventocontactP.css">
 </head>
 
-<body onload="loadVenue(); loadQuantity();">
+<body onload="getDateVenueDisplay(); loadQuantity(); loadDateOfBooking(); loadChangeDate();">
 
 
     <header>
@@ -43,8 +43,12 @@
                                 <span id="cart-total-value"></span>
                             </div>
 
+                            <div class="booking-date">
+                                <input type="date" id="dateDisplayed" onblur="saveDateOfBooking(); loadDateOfBooking();" readonly >
+                            </div>
+
                             <div class="quantity-fooditems">
-                                <input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of People Booking For">
+                                <input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of Guests">
                             </div>
 
                             <div class="grand-total">
@@ -59,8 +63,22 @@
                     </div>
                 </li>
 
-                <li><a href="loginpage1.html" style="color: white;">Login</a></li>
+                <!-- <li><a href="loginpage1.html" style="color: white;">Login</a></li> -->
                 <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
+
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Login</button>
+                        <div class="dropdown-content">
+                            <a href="loginpage1.html">LogIn / SignUp</a>
+                            <a href="checkoutpage.html">Your Account</a>
+                            <!-- <a href="feedback1.html">Feedback</a> -->
+                        </div>
+                    </div>
+
+                </li>
+
+
                 <li>
                     <div class="dropdown">
                         <button class="dropbtn">Contact</button>
@@ -77,7 +95,8 @@
                     <div class="dropdown">
                         <button class="dropbtn">Services</button>
                         <div class="dropdown-content">
-                            <a href="venpage1.html">Venue</a>
+                            <!-- <button type="text">Venue</button> -->
+                            <a href="venpage1.html" id="myAnchor" onclick="loadVidPage();">Venue</a>
                             <a href="cateringpage1.html">Catering</a>
                             <a href="artistpage1.html">Artist Booking</a>
                             <!-- <a href="#">Ticket Booking</a> -->
@@ -96,12 +115,43 @@
 
         <br><br><br><br><br><br><br>
         <div class="searchbar">
-            <button type="button" class="filter-button">Filter</button>
-            <input type="text" placeholder=" Search Venues" class="search-bar-button" id="searchText">
-            <button type="submit" class="search-image-button"
+            <!-- <button type="button" class="filter-button">Filter</button> -->
+            <input type="text"  placeholder=" Search Venues" class="search-bar-button" id="searchText">
+            <button type="submit" class="search-image-button" id="myBtn"
                 onclick="showVenueListByName(document.getElementById('searchText').value)"><i
                     class="fa fa-search"></i></button>
+                
+            <label for="date" style="padding-left: 0.8em;font-size: 1.2em; font-weight: 600; padding-right: 0.2em;">Change Date:</label>
+            <input type="date" id="dateEnteredvenpg" onblur="loadChangeDate();" onchange="saveDateOfBooking(); loadChangeDate(); window.location.reload();" style="color-scheme: dark; background: black; padding-left: 0.8em;" >
         </div>
+
+
+        <script>
+            function loadChangeDate()
+            {
+                let dateBooked;
+                dateBooked = localStorage.getItem("dateBooked");
+                // dateBooked = dateBooked ? JSON.parse(dateBooked) : dateBooked
+                
+
+                if(dateBooked)
+                {
+                    document.getElementById("dateEnteredvenpg").value = dateBooked;
+                    var dateControl = document.querySelector('input[type="date"]');
+                    dateControl.value = dateBooked;
+                    // console.log(dateControl.value);
+                }
+
+            }
+
+            var input = document.getElementById("searchText");
+            input.addEventListener("keypress", function(event) {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("myBtn").click();
+              }
+            });
+        </script>
 
     </header>
 

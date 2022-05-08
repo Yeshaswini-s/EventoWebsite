@@ -48,7 +48,7 @@
     </script> -->
 </head>
 
-<body onload="loadSponsor(); loadQuantity();">
+<body onload="loadSponsor(); loadQuantity(); loadDateOfBooking();">
     <!-- <header style="background-color: #E43F5A; text-align: center; top: 0; left: 0; width: 100%;">
 
             <h1 style="color:#D4ECDD;; display: inline-block; border: 1px solid; border-radius: 30px;"> </h1>
@@ -78,6 +78,10 @@
                                     <span id="cart-total-value"></span>
                                 </div>
 
+                                <div class="booking-date">
+                                    <input type="date" id="dateDisplayed" onblur="saveDateOfBooking(); loadDateOfBooking();" readonly >
+                                </div>
+
                                 <div class="quantity-fooditems">
                                     <input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of Guests">
                                 </div>
@@ -94,8 +98,22 @@
                         </div>
                     </li>
     
-                    <li><a href="loginpage1.html" style="color: white;">Login</a></li>
+                    <!-- <li><a href="loginpage1.html" style="color: white;">Login</a></li> -->
                     <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
+
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Login</button>
+                            <div class="dropdown-content">
+                                <a href="loginpage1.html">LogIn / SignUp</a>
+                                <a href="checkoutpage.html">Your Account</a>
+                                <!-- <a href="feedback1.html">Feedback</a> -->
+                            </div>
+                        </div>
+    
+                    </li>
+
+
                     <li>
                         <div class="dropdown">
                             <button class="dropbtn">Contact</button>
@@ -112,7 +130,8 @@
                         <div class="dropdown">
                             <button class="dropbtn">Services</button>
                             <div class="dropdown-content">
-                                <a href="venpage1.html">Venue</a>
+                                <!-- <button type="text">Venue</button> -->
+                                <a href="venpage1.html" id="myAnchor" onclick="loadVidPage();">Venue</a>
                                 <a href="cateringpage1.html">Catering</a>
                                 <a href="artistpage1.html">Artist Booking</a>
                                 <!-- <a href="#">Ticket Booking</a> -->

@@ -19,98 +19,123 @@
     <link rel="stylesheet" href="eventocontactP.css">
 </head>
 
-<body onload="loadArtist(); loadQuantity();">
+<body onload="loadArtist(); loadQuantity(); loadDateOfBooking();">
 
     <!-- header  -->
     <header>
             <!-- navbar -->
             <nav class="navbar">
-                <!-- <a href = "index.html" class = "navbar-brand">Vintage.</a>
-          <button type = "button" class = "navbar-toggler">
-            <i class = "fas fa-bars"></i>
-          </button> -->
+                <ul class="menu-ul">
+                    <li><img src="logo.png" alt="picture of the logo" width="90" height="90"
+                            onclick="window.location.href='homepage1.html'" /></li>
+    
+                    <li>
+                        <div class="cart">
+                            <button type="button" id="cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="cart-count-info"></span>
+                            </button>
+    
+                            <div class="cart-container">
+                                <div class="cart-list">
+    
+                                </div>
+    
+                                <div class="cart-total">
+                                    <h3>Approx Total: Rs </h3>
+                                    <span id="cart-total-value"></span>
+                                </div>
 
+                                <div class="booking-date">
+                                    <input type="date" id="dateDisplayed" onblur="saveDateOfBooking(); loadDateOfBooking();" readonly >
+                                </div>
 
-                <!-- <div class="navbar-collapse"> -->
-                    <ul class="menu-ul">
-                        <li><img src="logo.png" alt="picture of the logo" width="90" height="90"
-                                onclick="window.location.href='homepage1.html'" /></li>
+                                <div class="quantity-fooditems">
+                                    <input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of Guests">
+                                </div>
 
-                        <li>
-                            <div class="cart">
-                                <button type="button" id="cart-btn">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span id="cart-count-info"></span>
-                                </button>
-            
-                                <div class="cart-container">
-                                    <div class="cart-list">
-            
-                                    </div>
-            
-                                    <div class="cart-total">
-                                        <h3>Approx Total: Rs </h3>
-                                        <span id="cart-total-value"></span>
-                                    </div>
+                                <div class="grand-total">
+                                    <!-- <a href="checkoutpage.html"> -->
+                                        <button type = "button" class = "grand-total-button allbutton" onclick="createOrders(event);">
+                                            CHECKOUT
+                                        </button>
+                                    <!-- </a> -->
 
-                                    <div class="quantity-fooditems">
-                                        <input type="number" class="foodQuantity" onblur="saveQuantity();" id="foodQuantity" min="10" name="foodQuantity" placeholder="Number of Guests">
-                                    </div>
-
-                                    <div class="grand-total">
-                                        <!-- <a href="checkoutpage.html"> -->
-                                            <button type = "button" class = "grand-total-button allbutton" onclick="createOrders(event);">
-                                                CHECKOUT
-                                            </button>
-                                        <!-- </a> -->
-
-                                    </div>
                                 </div>
                             </div>
-                        </li>
+                        </div>
+                    </li>
+    
+                    <!-- <li><a href="loginpage1.html" style="color: white;">Login</a></li> -->
+                    <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
 
-                        <li><a href="loginpage1.html" style="color: white;">Login</a></li>
-                        <!-- <li><a href="contactus1.html" style="color: white;">Contact</a></li> -->
-                        <li>
-                            <div class="dropdown">
-                                <button class="dropbtn">Contact</button>
-                                <div class="dropdown-content">
-                                    <a href="contactus1.html">Contact Us</a>
-                                    <a href="aboutus1.html">About Us</a>
-                                    <a href="feedback1.html">Feedback</a>
-                                </div>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Login</button>
+                            <div class="dropdown-content">
+                                <a href="loginpage1.html">LogIn / SignUp</a>
+                                <a href="checkoutpage.html">Your Account</a>
+                                <!-- <a href="feedback1.html">Feedback</a> -->
                             </div>
+                        </div>
+    
+                    </li>
 
-                        </li>
 
-                        <li>
-                            <div class="dropdown">
-                                <button class="dropbtn">Services</button>
-                                <div class="dropdown-content">
-                                    <a href="venpage1.html">Venue</a>
-                                    <a href="cateringpage1.html">Catering</a>
-                                    <a href="artistpage1.html">Artist Booking</a>
-                                    <!-- <a href="#">Ticket Booking</a> -->
-                                </div>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Contact</button>
+                            <div class="dropdown-content">
+                                <a href="contactus1.html">Contact Us</a>
+                                <a href="aboutus1.html">About Us</a>
+                                <a href="feedback1.html">Feedback</a>
                             </div>
-
-                        </li>
-
-                        <li><a href="homepage1.html" style="color: white;">Home</a></li>
-                    </ul>
+                        </div>
+    
+                    </li>
+    
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Services</button>
+                            <div class="dropdown-content">
+                                <!-- <button type="text">Venue</button> -->
+                                <a href="venpage1.html" id="myAnchor" onclick="loadVidPage();">Venue</a>
+                                <a href="cateringpage1.html">Catering</a>
+                                <a href="artistpage1.html">Artist Booking</a>
+                                <!-- <a href="#">Ticket Booking</a> -->
+                            </div>
+                        </div>
+    
+                    </li>
+    
+                    <li><a href="homepage1.html" style="color: white;">Home</a></li>
+                </ul>
                 </div>
-
-
-                
+    
+    
+    
             </nav>
             <!-- end of navbar -->
 
             <br><br><br><br><br><br><br>
             <div class="searchbar">
-                <button type="button" class="filter-button">Filter</button>
+                <!-- <button type="button" class="filter-button">Filter</button> -->
                 <input type="text" placeholder=" Search Artists" class="search-bar-button" id="searchText">
-                <button type="submit" class="search-image-button" onclick="showArtistsListByName(document.getElementById('searchText').value)"><i class="fa fa-search"></i></button>
+                <button type="submit" class="search-image-button" id="myBtn" onclick="showArtistsListByName(document.getElementById('searchText').value)"><i class="fa fa-search"></i></button>
             </div>
+
+
+
+            <script>
+                var input = document.getElementById("searchText");
+                input.addEventListener("keypress", function(event) {
+                  if (event.key === "Enter") {
+                    event.preventDefault();
+                    document.getElementById("myBtn").click();
+                  }
+                });
+            </script>
+
     </header>
     <!-- end of header -->
 

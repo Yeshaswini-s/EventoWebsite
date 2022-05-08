@@ -1,86 +1,68 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <!-- <link rel="stylesheet" href="venpage1style.css">
+    <link rel="stylesheet" href="eventostylesHP.css">
+    <link rel="stylesheet" href="eventocontactP.css"> -->
 
+    <title>EVENTO | Profile</title>
+    <link rel="icon" type="image/x-icon" href="evento.ico">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="eventocheckoutP.css">
+    <!-- <link rel="stylesheet" href="orderdisplay.css"> -->
 
 </head>
 
-<body onload="createOrders(event);">
+<body onload="bleh('userdisplay');">
+    
 
-    <div class="orders-table-container" id="orders-table-container">
-        <table class="orderedItem-table" id="orderedItem-table">
-            <tbody>
-                <tr>
-                    <th>Product</th>
-                    <th>Features</th>
-                    <th>Description</th>
-                    <th>Cost</th>
-                </tr>
-
-
-                <div class="orderedItems-rows">
-                    <tr>
-                        <td>
-                            Product 1
-                        </td>
-                        <td>
-                            Features
-                        </td>
-
-                        <td>
-                            Lorem Ipsum
-                        </td>
-
-
-                        <td id="price">
-                            $1000
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            Product 2
-                        </td>
-                        <td>
-                            Features
-                        </td>
-
-                        <td>
-                            Lorem Ipsum
-                        </td>
-
-
-                        <td id="price2">
-                            $300
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Product 3
-                        </td>
-                        <td>
-                            Features
-                        </td>
-
-
-                        <td>
-                            Lorem Ipsum
-                        </td>
-
-                        <td id="price3">
-                            $1200
-                        </td>
-                    </tr>
-
-                </div>
-
-            </tbody>
-        </table>
+    <div class="menuwithtext">
+        <div class="middle">
+            <ul class="menus">
+                <li class="item">
+                    <a href="homepage1.html"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="item" id="profile">
+                    <a href="#profile"><i class="fas fa-user"></i>Profile</a>
+                    <div class="sub-menus">
+                        <a href="#" onclick="bleh('userdisplay'); ">Account</a>
+                        <!-- <a href="#">Picture</a> -->
+                    </div>
+                </li>
+                <li class="item" id="messages">
+                    <a href="#messages"><i class="fas fa-envelope"></i>Your Orders</a>
+                    <div class="sub-menus">
+                        <a href="#" onclick="bleh('dispv');">Venues</a>
+                        <a href="#" onclick="bleh('dispa');">Artists</a>
+                        <a href="#" onclick="bleh('dispf');">Catering</a>
+                    </div>
+                </li>
+                <!-- <li class="item" id="settings">
+                    <a href="#settings"><i class="fas fa-cog"></i>Settings</a>
+                    <div class="sub-menus">
+                        <a href="#" onclick="bleh('bye'); ">language</a>
+                        <a href="#">Password</a>
+                    </div>
+                </li>-->
+                <li class="item">
+                    <a href="#" onclick="bleh('userlogout');"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                </li> 
+            </ul>
+        </div>
+        <div class="righttable">
+            <br><br><br><br><br><br>
+           <div id="main-content">
+            
+            
+           </div>
+        </div>
     </div>
 
     <script src="checkoutpage.js"></script>
 </body>
 
 </html>
+

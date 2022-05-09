@@ -319,11 +319,24 @@ function loadVenueOrdersDisplay(json){
             // product['type'] = 'artists';
 
 
+            if(actualvenidorders.dateBooked != null)
+            {
+                //trimming for date
+                var string = actualvenidorders.dateBooked;
+                var length = 10;
+                var date = string.substring(0, length);
+            }
+            else
+            {
+                var date = actualvenidorders.dateBooked;
+            }
+
+
 
             html += `
             <tr class="table-rows">
                 <td class="items">${actualvenidorders.order_id}</td>
-                <td class="items">${actualvenidorders.dateBooked}</td>
+                <td class="items">${date}</td>
                 <td class="items">${actualvenidorders.venueid[0].Vname}</td>
                 <td class="items">${actualvenidorders.venueid[0].Vprice}</td>
             </tr>
@@ -368,12 +381,22 @@ function loadFoodOrdersDisplay(json){
         data.forEach(actualvenidorders => {
             // product['type'] = 'artists';
 
-
+            if(actualvenidorders.dateBooked != null)
+            {
+                //trimming for date
+                var string = actualvenidorders.dateBooked;
+                var length = 10;
+                var date = string.substring(0, length);
+            }
+            else
+            {
+                var date = actualvenidorders.dateBooked;
+            }
 
             html += `
             <tr class="table-rows">
                 <td class="items">${actualvenidorders.order_id}</td>
-                <td class="items">${actualvenidorders.dateBooked}</td>
+                <td class="items">${date}</td>
                 <td class="items">${actualvenidorders.foodid[0].Name}</td>
                 <td class="items">${actualvenidorders.foodid[0].Price}</td>
             </tr>
@@ -419,12 +442,22 @@ function loadArtistOrdersDisplay(json){
         data.forEach(actualvenidorders => {
             // product['type'] = 'artists';
 
-
+            if(actualvenidorders.dateBooked != null)
+            {
+                //trimming for date
+                var string = actualvenidorders.dateBooked;
+                var length = 10;
+                var date = string.substring(0, length);
+            }
+            else
+            {
+                var date = actualvenidorders.dateBooked;
+            }
 
             html += `
             <tr class="table-rows">
                 <td class="items">${actualvenidorders.order_id}</td>
-                <td class="items">${actualvenidorders.dateBooked}</td>
+                <td class="items">${date}</td>
                 <td class="items">${actualvenidorders.artistid[0].Name}</td>
                 <td class="items">${actualvenidorders.artistid[0].price}</td>
             </tr>

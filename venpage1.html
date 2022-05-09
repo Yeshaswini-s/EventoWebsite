@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="eventocontactP.css">
 </head>
 
-<body onload="getDateVenueDisplay(); loadQuantity(); loadDateOfBooking(); loadChangeDate();">
+<body onload="getDateVenueDisplay(); loadQuantity(); loadDateOfBooking();">
 
 
     <header>
@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="booking-date">
-                                <input type="date" id="dateDisplayed" onblur="saveDateOfBooking(); loadDateOfBooking();" readonly >
+                                <input type="date" id="dateEntered" onblur="saveDateOfBooking(); loadDateOfBooking();" readonly >
                             </div>
 
                             <div class="quantity-fooditems">
@@ -122,11 +122,11 @@
                     class="fa fa-search"></i></button>
                 
             <label for="date" style="padding-left: 0.8em;font-size: 1.2em; font-weight: 600; padding-right: 0.2em;">Change Date:</label>
-            <input type="date" id="dateEnteredvenpg" onblur="loadChangeDate();" onchange="saveDateOfBooking(); loadChangeDate(); window.location.reload();" style="color-scheme: dark; background: black; padding-left: 0.8em;" >
+            <input type="date" id="dateEntered2" onchange="saveDateOfBooking(); loadDateOfBooking(); window.location.reload();" style="color-scheme: dark; background: black; padding-left: 0.8em;" >
         </div>
 
 
-        <script>
+        <!-- <script>
             function loadChangeDate()
             {
                 let dateBooked;
@@ -151,7 +151,7 @@
                 document.getElementById("myBtn").click();
               }
             });
-        </script>
+        </script> -->
 
     </header>
 

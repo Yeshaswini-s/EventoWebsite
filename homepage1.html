@@ -79,7 +79,7 @@
                                 </div>
 
                                 <div class="booking-date">
-                                    <input type="date" id="dateDisplayed" onblur="saveDateOfBooking(); loadDateOfBooking();" readonly >
+                                    <input type="date" id="dateEntered" onblur="saveDateOfBooking(); loadDateOfBooking();" readonly >
                                 </div>
 
                                 <div class="quantity-fooditems">
@@ -223,7 +223,7 @@
             <div class="box">
                 <img src="ven3.jpg" alt="" width="250" height="350">
                 <h3>Venue Booking</h3>
-                <a href="venpage1.html" class="btn">View</a>
+                <a href="venpage1.html" id="myAnchor" onclick="loadVidPage();"class="btn">View</a>
             </div>
     
             <div class="box">

@@ -646,7 +646,7 @@ function loadVenueHtmlSearch(json){
 
                     <div class = "product-content">
                         <h3 class = "product-name">${product.Vname}</h3>
-                        <span class = "product-capacity">${product.capacity} cap</span>
+                        <!-- <span class = "product-capacity">${product.capacity} cap</span> -->
                         <p><span style="background-color: #48c479; padding:0.5em; color:white;margin-left: 1.2em;border-radius: 0.5em;"> <span class="icon-star"></span>${product.vratings}<span></span></p>
                         <p class = "product-price">Rs ${product.Vprice}</p>
 
@@ -774,6 +774,7 @@ function createOrders(e) {
     
     postData1["products"] = JSON.parse(localStorage.getItem('products'))
     postData1["user_id"] = localStorage.getItem("user_id")
+    postData1["dateBooked"] = localStorage.getItem("dateBooked")
     postData1["numberOfPeeps"] = localStorage.getItem("numberOfPeeps")
 
     quantityPeeps = postData1["numberOfPeeps"]
@@ -853,7 +854,7 @@ function saveQuantity(){
 
 function saveDateOfBooking(){
     let dateBooked;
-    dateBooked = document.getElementById("dateEntered").value
+    dateBooked = document.getElementById("dateEntered2").value
     localStorage.setItem("dateBooked", dateBooked);
 }
 
@@ -877,9 +878,12 @@ function loadDateOfBooking(){
     if(dateBooked)
     {
         // document.getElementById("dateEnteredvenpg").value = dateBooked;
-        var dateControl = document.querySelector('input[type="date"]');
-        dateControl.value = dateBooked;
-        console.log(dateControl.value);
+        // var dateControl = document.querySelector('input[type="date"]');
+        // var dateControl = document.getElementById("dateEntered");
+        // dateControl.value = dateBooked;
+        document.getElementById("dateEntered").value = dateBooked;
+        document.getElementById("dateEntered2").value = dateBooked;
+        // console.log(dateControl.value);
     }
 }
 

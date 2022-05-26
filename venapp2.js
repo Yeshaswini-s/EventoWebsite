@@ -26,7 +26,7 @@ function checkdate(){
     const dateInput = document.getElementById('dateEntered2');
 
     if (!dateInput.value) {
-              alert("Choose a fuckin date!");
+              alert("Choose a date!");
         console.log('Input type date is empty');
         
     } else {

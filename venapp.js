@@ -646,7 +646,7 @@ function loadVenueHtmlSearch(json){
 
                     <div class = "product-content">
                         <h3 class = "product-name">${product.Vname}</h3>
-                        <!-- <span class = "product-capacity">${product.capacity} cap</span> -->
+                        <span style="display:none" class = "product-capacity">${product.capacity} cap</span>
                         <p><span style="background-color: #48c479; padding:0.5em; color:white;margin-left: 1.2em;border-radius: 0.5em;"> <span class="icon-star"></span>${product.vratings}<span></span></p>
                         <p class = "product-price">Rs ${product.Vprice}</p>
 

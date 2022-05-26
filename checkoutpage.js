@@ -241,8 +241,7 @@ function showUserDetails(json){
                 <div class="label-tag">Date of Birth</div>
                 <div class="input-tag">${date}</div>
 
-                <div class="label-tag">Gender</div>
-                <div class="input-tag">${data[0].Gender}</div>
+                
 
             </div>
             
@@ -250,6 +249,8 @@ function showUserDetails(json){
             `;
             
 
+            // <div class="label-tag">Gender</div>
+            //     <div class="input-tag">${data[0].Gender}</div>
 
     venuedisplay.innerHTML = html;
 

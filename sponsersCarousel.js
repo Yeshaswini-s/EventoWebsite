@@ -1,6 +1,6 @@
 const slideImages = document.querySelector('.slide-track');
 
-var baseUrl = 'http://localhost:8080/api'
+var baseUrl = 'http://ec2-13-233-244-214.ap-south-1.compute.amazonaws.com:8080/api'
 
 
 function loadSponsor(){

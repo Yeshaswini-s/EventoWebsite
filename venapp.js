@@ -7,7 +7,7 @@ const cartList = document.querySelector('.cart-list');
 const cartTotalValue = document.getElementById('cart-total-value');
 const cartCountInfo = document.getElementById('cart-count-info');
 let cartItemID = 1;
-var baseUrl = 'http://localhost:8080/api'
+var baseUrl = 'http://ec2-13-233-244-214.ap-south-1.compute.amazonaws.com:8080/api'
 
 eventListeners();
 

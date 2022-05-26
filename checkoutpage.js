@@ -2,7 +2,7 @@
 //code for orderdisplay.html page
 const orderList = document.querySelector('.table-section');
 const venuedisplay = document.getElementById("main-content");
-var baseUrl = 'http://localhost:8080/api'
+var baseUrl = 'http://ec2-13-233-244-214.ap-south-1.compute.amazonaws.com:8080/api'
 function displayOrderedItems()
 {
     let postData1 = {};
